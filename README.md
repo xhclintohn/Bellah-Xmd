@@ -5,8 +5,8 @@
 
   <p align="center">
 <a href="https://github.com/Tennor-modz/followers"><img title="Followers" src="https://img.shields.io/github/followers/Tennor-modz?color=blue&style=flat-square"></a>
-<a href="https://github.com/GlobalTechInfo/SUHAIL-XMD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/GlobalTechInfo/SUHAIL-XMD?color=blue&style=flat-square"></a>
-<a href="https://github.com/GlobalTechInfo/SUHAIL-XMD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/GlobalTechInfo/SUHAIL-XMD?color=blue&style=flat-square"></a>
+<a href="https://github.com/Tennor-modz/Bellah-XMD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Tennor-modz/Bellah-XMD?color=blue&style=flat-square"></a>
+<a href="https://github.com/Tennor-modz/Bellah-XMD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Tennor-modz/Bellah-XMD?color=blue&style=flat-square"></a>
 <a href="https://github.com/GlobalTechInfo/SUHAIL-XMD/"><img title="Size" src="https://img.shields.io/github/repo-size/GlobalTechInfo/SUHAIL-XMD?style=flat-square&color=green"></a>
 <a href="https://github.com/GlobalTechInfo/SUHAIL-XMD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 </p>
