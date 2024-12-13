@@ -56,7 +56,7 @@
 --------
 5.  ***Deploy/run on panels  [`Panel deployment`] | [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm).***
 
-**(E) BOT HOSTING PANEL🔥(DISCORD) DEPLOYMENT**
+**(1) BOT HOSTING PANEL🔥(DISCORD) DEPLOYMENT**
 <details>
 <summary>TAP TO OPEN</summary>
 <a href="https://www.mediafire.com/file/dgmat7nrotbtzma/BELLAH_XMD.zip/file"><img src="https://img.shields.io/badge/DOWNLOAD%20FILES-yellow" alt="Rainhost Files" width="150"></a>
