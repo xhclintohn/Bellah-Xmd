@@ -39,7 +39,7 @@
 
 1. ***Get [`SESSION ID`](https://suhail-md-vtsf.onrender.com/)  by Pair Code Or scanning QR code. `Whatapp>Three dots>Linked Devices`***
 
-.  ***Get a Mongodb uri from [`Mongodb`] | [`Tutorial`](https://youtu.be/4YEUtGlqkl4).***
+
 2.  ***`Star ⭐` repository & Click [`FORK`](https://github.com/Tennor-modz/bellah-XMD/fork)***
    
 3.  #### DEPLOY IN HEROKU 
@@ -54,8 +54,7 @@
 <a href='https://dashboard.render.com' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/RENDER-h?color=maroon&style=for-the-badge&logo=render'/></a></p>
 
 --------
-5. #### DEPLOY ON PANELS
-
+5.  ***Deploy/run on panels  [`Panel deployment`] | [`Tutorial`]().***
 
 
 
