@@ -1,5 +1,5 @@
 //base by DGXeon
-//recode by YASSxOFC 
+//recode by Giddy Tennor 
 
 require('./lib/listmenu')
 const {
