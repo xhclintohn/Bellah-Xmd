@@ -37,7 +37,7 @@
 ## Deployment Methods
 ---
 
-1. ***Get [`Creds.json`](https://replit.com/@DGXeon/Xeon-PairCode?v=1)  by Pair Code Or scanning QR code. `Whatapp>Three dots>Linked Devices`***
+1. ***Get [`Creds.json`](https://replit.com/@DGXeon/Xeon-PairCode?v=1)  by running on replit to get your WhatsApp code. `Whatapp>Three dots>Linked Devices`***
 
 
 2.  ***`Star ⭐` repository & Click [`FORK`](https://github.com/Tennor-modz/bellah-XMD/fork)***
