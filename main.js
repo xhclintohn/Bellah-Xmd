@@ -17,6 +17,7 @@ const FileType = require('file-type')
 const path = require('path')
 const axios = require('axios')
 const _ = require('lodash')
+const { File } = require('megajs');
 const moment = require('moment-timezone')
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
@@ -69,6 +70,40 @@ const useMobile = process.argv.includes("--mobile")
 
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 const question = (text) => new Promise((resolve) => rl.question(text, resolve))
+
+const sessionDir = path.join(__dirname, 'session');
+const credsPath = path.join(sessionDir, 'creds.json');
+
+async function downloadSessionData() {
+  try {
+    // Ensure session directory exists
+    await fs.promises.mkdir(sessionDir, { recursive: true });
+
+    if (!fs.existsSync(credsPath)) {
+      if (!global.SESSION_ID) {
+      return console.log(color(`Session id not found at SESSION_ID!\nCreds.json not found at session folder!\n\nWait to enter your number`, 'red'));
+      }
+
+      const sessdata = global.SESSION_ID.split("Bellah~")[1];
+      const filer = File.fromURL(`https://mega.nz/file/${sessdata}`);
+
+      await new Promise((resolve, reject) => {
+        filer.download((err, data) => {
+          if (err) reject(err);
+          resolve(data);
+        });
+      })
+      .then(async (data) => {
+        await fs.promises.writeFile(credsPath, data);
+        console.log(color(`Session successfully saved, please wait!!`, 'green'));
+        await ,();
+      });
+    }
+  } catch (error) {
+    console.error('Error downloading session data:', error);
+  }
+}
+
 
 async function startXeonBotInc() {
 let { version, isLatest } = await fetchLatestBaileysVersion()
@@ -604,7 +639,27 @@ return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net'
     return XeonBotInc
 }
 
-startXeonBotInc()
+async function tylor() {
+    if (fs.existsSync(credsPath)) {
+        console.log(color("Session file found, starting bot...", 'yellow'));
+await startXeonBotInc();
+} else {
+         const sessionDownloaded = await downloadSessionData();
+        if (sessionDownloaded) {
+            console.log("Session downloaded, starting bot.");
+await startXeonBotInc();
+    } else {
+     if (!fs.existsSync(credsPath)) {
+    if(!global.SESSION_ID) {
+            console.log(color("Please wait for a few seconds to enter your number!", 'red'));
+await startXeonBotInc();
+        }
+    }
+  }
+ }
+}
+
+tylor()
 
 process.on('uncaughtException', function (err) {
 let e = String(err)
