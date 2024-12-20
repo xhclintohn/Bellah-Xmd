@@ -37,7 +37,7 @@
 ## Deployment Methods
 ---
 
-1. ***Get [`Session.iD`](https://xmd-pair-1.onrender.com)  by linking code to your WhatsApp . `Whatapp>Three dots>Linked Devices`***
+1. ***Get [`Session.iD`](https://xmd-pair-2.onrender.com)  by linking code to your WhatsApp . `Whatapp>Three dots>Linked Devices`***
 
 
 2.  ***`Star ⭐` repository & Click [`FORK`](https://github.com/Tennor-modz/bellah-XMD/fork)***
