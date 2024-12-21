@@ -48,6 +48,8 @@
 
 --------
 
+`First get the session ID via pairing,,,then you'll paste it on heroku later,,,,if you want to change bot settings do that on settings.js`
+
 
 4. #### DEPLOY TO RENDER
 
