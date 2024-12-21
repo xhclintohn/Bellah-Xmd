@@ -96,7 +96,7 @@ async function downloadSessionData() {
       .then(async (data) => {
         await fs.promises.writeFile(credsPath, data);
         console.log(color(`Session successfully saved, please wait!!`, 'green'));
-        await ,();
+        await startXeonBotInc();
       });
     }
   } catch (error) {
