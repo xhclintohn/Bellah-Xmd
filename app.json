@@ -14,15 +14,13 @@
       "description": "Enter your session id",
       "value": "",
       "required": true
-
-      },
+},
   "env": {
     "BOT_NAME": {
       "description": "Enter bot name of your choice here",
       "value": "",
       "required": false
-
-      },
+    },
   "env": {
     "OWNER_NUMBER": {
       "description": "Enter your whatsapp number here",
@@ -45,3 +43,7 @@
     }
   ]
 }
+
+    
+    
+    
