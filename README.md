@@ -77,7 +77,7 @@
 --------
 5.  ***Deploy/run on panels  [`Panel deployment`] | [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm).***
 
-**(1) BOT HOSTING PANEL🔥(DISCORD) DEPLOYMENT**
+**(1) BOT HOSTING PANEL(DISCORD) DEPLOYMENT**
 <details>
 <summary>TAP TO OPEN</summary>
 <a href="https://www.mediafire.com/file/dgmat7nrotbtzma/BELLAH_XMD.zip/file"><img src="https://img.shields.io/badge/DOWNLOAD%20FILES-yellow" alt="Rainhost Files" width="150"></a>
@@ -86,7 +86,7 @@
 </details
 
 
-**(2) DAKI HOSTING PANEL🔥(DISCORD) DEPLOYMENT**
+**(2) DAKI HOSTING PANEL(DISCORD) DEPLOYMENT**
 <details>
 <summary>TAP TO OPEN</summary>
 <a href="https://www.mediafire.com/file/dgmat7nrotbtzma/BELLAH_XMD.zip/file"><img src="https://img.shields.io/badge/DOWNLOAD%20FILES-yellow" alt="Rainhost Files" width="150"></a>
@@ -95,7 +95,7 @@
 </details
 
 
-**(3) SOLAR HOSTING PANEL🔥(DISCORD) DEPLOYMENT**
+**(3) SOLAR HOSTING PANEL(DISCORD) DEPLOYMENT**
 <details>
 <summary>TAP TO OPEN</summary>
 <a href="https://www.mediafire.com/file/dgmat7nrotbtzma/BELLAH_XMD.zip/file"><img src="https://img.shields.io/badge/DOWNLOAD%20FILES-yellow" alt="Rainhost Files" width="150"></a>
