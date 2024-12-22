@@ -112,4 +112,13 @@
 
 
 
-*Bot Still under strict development/Maintenance*
+#### Thanks To
+
+<details close>
+<summary>Read More</summary>
+
+<br>
+
+* [`Tylor`](https://github.com/Dark_Xploit)
+
+ </details>
