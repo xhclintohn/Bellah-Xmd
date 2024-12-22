@@ -90,6 +90,8 @@
 
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 
+`if you want to change bot settings on panels kindly change them on settings.js carefully`
+
 
 - Star ⭐ repo if you like this bot.
 
