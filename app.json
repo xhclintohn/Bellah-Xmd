@@ -16,10 +16,44 @@
       "required": true
 },
   "BOT_NAME": {
-      "description": "Enter your session id",
+      "description": "Enter bot name of your choice here",
       "value": "Bellah Xmd",
+      "required": false
+    },
+  "OWNER_NUMBER": {
+      "description": "Enter your whatsapp number here",
+      "value": "254104245659",
       "required": true
-    
+    },
+  "TYPE_MENU": {
+      "description": "Enter menu of your type,,menu types are V1-V8",
+      "value": "V1 or V2",
+      "required": false
+    },
+  "AUTOSW_VIEW": {
+      "description": "Type true if you want your bot to view status updates or else type false",
+      "value": "",
+      "required": false
+    },
+  "WELCOME": {
+      "description": "Type true if you want your bot to send welcome or goodbye messages in groups or else type fals",
+      "value": "",
+      "required": false
+    },
+  "ANTI_CALL": {
+      "description": "Type true if you want bot to reject incoming calls or else type false",
+      "value": "",
+      "required": false
+    },
+  "AUTO_BLOCK": {
+      "description": "Type true if you want bot to block unknown numbers if else type false",
+      "value": "",
+      "required": false
+    },
+  "ANTIFOREIGN_NUMBER": {
+      "description": "Enter antiforeignnumbers with country codes if you don't want antiforeign numbers",
+      "value": "234,263",
+      "required": false 
     }
     },
   "buildpacks": [
