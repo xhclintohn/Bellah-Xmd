@@ -6,6 +6,8 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
+
+global.SESSION_ID = process.env.SESSION_ID || '' 
 //owmner v card
 global.ytname = "YT: GIDDYTENNOR" //ur yt chanel name
 global.socialm = "IG: @GIDDYTENNOR" //ur github or insta name
