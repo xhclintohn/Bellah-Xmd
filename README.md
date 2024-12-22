@@ -120,5 +120,7 @@
 <br>
 
 * [`Tylor`](https://github.com/Dark-Xploit) for the un ending support to make this repo alive
+* [`DGXeon`](https://github.com/DGXeon) the founder of the bot base
+* [`GiddyTennor`](https://github.com/Dark-Xploit) the founder of Bellah Xmd 
 
  </details>
