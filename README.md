@@ -2,6 +2,8 @@
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=THANKS FOR CHOOSING +BELLAH-XMD;MULTI+DEVICE+WHATSAPP+BOT;CREATED+BY+GIDDY+TENNOR;RELEASED+12.12.2024" alt="Typing SVG" /></a>
 
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=HAVE A +MERRY-CHRISMAS;AND+A+HAPPY+NEW;YEAR+GOOD+GIDDY+BYE;2024" alt="Typing SVG" /></a>
+
 
 <p align="center">
 <a href="https://github.com/Tennor-modz"><img title="Author" src="https://i.imgur.com/Q3XajKe.jpeg?style=for-the-badge&logo=github"></a>
@@ -41,7 +43,8 @@
 ## Deployment Methods
 ---
 
-1. ***Get [`Session.iD`](https://xmd-pair-2.onrender.com)  by linking code to your WhatsApp . `Whatapp>Three dots>Linked Devices`***
+1. - ***`Get your Session Id` by  [`PAIRING CODE HERE`](https://xmd-pair-2.onrender.com). `or` [`HERE if the first site is slow`](https://xmd-pair-code.onrender.com).***
+-
 
 
 2.  ***`Star ⭐` repository & Click [`FORK`](https://github.com/Tennor-modz/bellah-XMD/fork)***
