@@ -119,6 +119,6 @@
 
 <br>
 
-* [`Tylor`](https://github.com/Dark_Xploit)
+* [`Tylor`](https://github.com/Dark-Xploit)
 
  </details>
