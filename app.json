@@ -14,7 +14,12 @@
       "description": "Enter your session id",
       "value": "",
       "required": true
-
+},
+  "env": {
+    "BOT_NAME": {
+      "description": "Enter your session id",
+      "value": "Bellah Xmd",
+      "required": true
     }
     },
   "buildpacks": [
