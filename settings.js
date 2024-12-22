@@ -35,9 +35,9 @@ global.typemenu = process.env.TYPE_MENU || 'v2' // menu type 'v1' => 'v8'
 global.typereply = process.env.TYPE_REPLY'v1' // reply type 'v1' => 'v3'
 global.autoblocknumber = process.env.AUTOBLOCK_NUMBER || '263,234' //set autoblock country code
 global.antiforeignnumber = process.env.ANTIFOREIGN_NUMBER || '' //set anti foreign number country code
-global.welcome = process.env.WELCOME || false //welcome/left in groups
-global.anticall = process.env.ANTI_CALL || false //bot blocks user when called
-global.autoswview = process.env.AUTOSW_VIEW || true //auto status/story view
+global.welcome = process.env.WELCOME || 'false' //welcome/left in groups
+global.anticall = process.env.ANTI_CALL || 'false' //bot blocks user when called
+global.autoswview = process.env.AUTOSW_VIEW || 'true' //auto status/story view
 global.adminevent = true //show promote/demote message
 global.groupevent = true //show update messages in group chat
 //msg
