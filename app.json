@@ -54,6 +54,11 @@
       "description": "Enter antiforeignnumbers with country codes if you don't want antiforeign numbers",
       "value": "234,263",
       "required": false 
+    },
+  "PREFIX": {
+      "description": "Enter bot prefix of your choice if else leave blank for multiprefixes",
+      "value": ".",
+      "required": true
     }
     },
   "buildpacks": [
