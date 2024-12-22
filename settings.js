@@ -15,15 +15,15 @@ global.socialm = "IG: @GIDDYTENNOR" //ur github or insta name
 global.location = "Kenya" //ur location
 
 //new
-global.botname = '𝐁𝐞𝐥𝐥𝐚𝐡 𝐗𝐦𝐝' //ur bot name
-global.ownernumber = '254104245659' //ur owner number
+global.botname = process.env.BOT_NAME ||'𝐁𝐞𝐥𝐥𝐚𝐡 𝐗𝐦𝐝' //enter your  bot name here
+global.ownernumber = process.env.OWNER_NUMBER ||'254104245659' //ur owner number
 global.ownername = '© TENNOMODZ' //ur owner name
 global.websitex = "https://whatsapp.com/channel/0029VaPZWbY1iUxVVRIIOm0D" //"https://chat.whatsapp.com/JmsgzJllAAB8zHfQcJXxES"
 global.wagc = "https://chat.whatsapp.com/Hs0AwkOaFzbGi5sjicdeTR" //"https://chat.whatsapp.com/JmsgzJllAAB8zHfQcJXxES"
 global.themeemoji = '🪀'
 global.wm = "GIDDY TENNOR"
 global.botscript = 'https://whatsapp.com/channel/0029VaPZWbY1iUxVVRIIOm0D' //'https://chat.whatsapp.com/JmsgzJllAAB8zHfQcJXxES' //script link
-global.packname = "BELLAH XMD"
+global.packname = process.env.PACK_NAME ||"BELLAH XMD" //enter your stickers author name here
 global.author = "Giddy-Tennor"
 global.creator = "254703726139@s.whatsapp.net"
 global.xprefix = '.'
@@ -31,13 +31,13 @@ global.premium = ["254703726139"] // Premium User
 global.hituet = 0
 
 //bot sett
-global.typemenu = 'v2' // menu type 'v1' => 'v8'
-global.typereply = 'v1' // reply type 'v1' => 'v3'
-global.autoblocknumber = '263,234' //set autoblock country code
-global.antiforeignnumber = '' //set anti foreign number country code
-global.welcome = false //welcome/left in groups
-global.anticall = false //bot blocks user when called
-global.autoswview = true //auto status/story view
+global.typemenu = process.env.TYPE_MENU || 'v2' // menu type 'v1' => 'v8' 
+global.typereply = process.env.TYPE_REPLY'v1' // reply type 'v1' => 'v3'
+global.autoblocknumber = process.env.AUTOBLOCK_NUMBER || '263,234' //set autoblock country code
+global.antiforeignnumber = process.env.ANTIFOREIGN_NUMBER || '' //set anti foreign number country code
+global.welcome = process.env.WELCOME || false //welcome/left in groups
+global.anticall = process.env.ANTI_CALL || false //bot blocks user when called
+global.autoswview = process.env.AUTOSW_VIEW || true //auto status/story view
 global.adminevent = true //show promote/demote message
 global.groupevent = true //show update messages in group chat
 //msg
