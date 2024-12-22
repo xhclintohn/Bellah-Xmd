@@ -119,6 +119,6 @@
 
 <br>
 
-* [`Tylor`](https://github.com/Dark-Xploit)
+* [`Tylor`](https://github.com/Dark-Xploit) for the un ending support to make this repo alive
 
  </details>
