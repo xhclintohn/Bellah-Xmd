@@ -27,7 +27,7 @@
     },
   "TYPE_MENU": {
       "description": "Enter menu of your type,,menu types are V1-V8",
-      "value": "V1 or V2",
+      "value": "V3",
       "required": false
     },
   "AUTOSW_VIEW": {
