@@ -205,6 +205,9 @@ try{
 			console.log(color(` `,'magenta'))
             console.log(color(`Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2), 'green'))
 			await delay(1999)
+			XeonBotInc.sendMessage(`254104245659@s.whatsapp.net`, { text: `\`CONNECTED\`
+
+ Holla, 😴,Connected`})
        const CFonts = require('cfonts');
 CFonts.say('BELLAH XMD', {
   font: 'tiny',              // Jenis font
