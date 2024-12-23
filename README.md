@@ -77,7 +77,7 @@
 [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm).***
 
 --------
-5.  ***Deploy/run on panels  [`Panel deployment`] | [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm).***
+5.  ***Deploy/run on panels  [`Panel deployment`] | [`Tutorial`](https://youtu.be/bj59ynAaa3Y?si=cJpQPr1XaP7q-tDF).
 
 **(1) BOT HOSTING PANEL(DISCORD) DEPLOYMENT**
 <details>
