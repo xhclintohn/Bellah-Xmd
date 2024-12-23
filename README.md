@@ -72,7 +72,7 @@
 
 <a href='https://dashboard.render.com' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/RENDER-h?color=maroon&style=for-the-badge&logo=render'/></a></p>
 
-`Still working on it for now use Heroku and panels`
+`DEPLOY IT AS A BACKGROUND WORKER NOT WEB`
 
 --------
 5.  ***Deploy/run on panels  [`Panel deployment`] | [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm).***
