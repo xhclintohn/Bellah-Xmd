@@ -74,6 +74,8 @@
 
 `DEPLOY IT AS A BACKGROUND WORKER NOT WEB`
 
+[`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm).***
+
 --------
 5.  ***Deploy/run on panels  [`Panel deployment`] | [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm).***
 
