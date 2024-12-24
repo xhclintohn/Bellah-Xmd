@@ -86,7 +86,7 @@
 </details
 
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
-<a href="https://youtu.be/TVu8CQPPliM?feature=shared"><img src="https://img.shields.io/badge/WATCH%20SCALINGO%20TUTORIAL-red" alt="Render Tutorial" width="150"></a>
+<a href="https://youtu.be/XAEvjrFIoiw?si=zdVjdtav3ZtsjTRz"><img src="https://img.shields.io/badge/WATCH%20SCALINGO%20TUTORIAL-red" alt="Render Tutorial" width="150"></a>
 </details>
 
 
