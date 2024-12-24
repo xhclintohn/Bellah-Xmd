@@ -59,6 +59,10 @@
       "description": "Enter bot prefix of your choice if else leave blank for multiprefixes",
       "value": ".",
       "required": true
+    "AUTO_RECORD": {
+      "description": "type true if you want bot to indicate recording or else type false",
+      "value": "false",
+      "required": false
     }
     },
   "buildpacks": [
