@@ -77,6 +77,19 @@
 [`Tutorial`](https://youtu.be/bj59ynAaa3Y?si=cJpQPr1XaP7q-tDF).***
 
 --------
+
+
+**(5.) Deploy on Scalingo**
+<details>
+<summary>TAP TO OPEN</summary>
+<a href="https://scalingo.com/"><img src="https://img.shields.io/badge/SIGNUP%20&%20DEPLOY-gold" alt="Scalingo Deploy" width="150"></a>
+</details
+
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+
+[`Tutorial`](https://youtu.be/bj59ynAaa3Y?si=cJpQPr1XaP7q-tDF).***
+
+
 5.  ***Deploy/run on panels  [`Panel deployment`] | [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm).
 
 **(1) BOT HOSTING PANEL(DISCORD) DEPLOYMENT**
