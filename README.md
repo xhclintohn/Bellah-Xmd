@@ -104,7 +104,7 @@
 **(2) DAKI HOSTING PANEL(DISCORD) DEPLOYMENT**
 <details>
 <summary>TAP TO OPEN</summary>
-<a href="https://www.mediafire.com/file/1xyk52lqeubuhmq/BELLAH_XMD.zip/file"><img src="https://img.shields.io/badge/DOWNLOAD%20FILES-yellow" alt="Rainhost Files" width="150"></a>
+<a href="https://www.mediafire.com/file/bg2vyxvv8acy3s1/BELLAH_XMD%25282%2529.zip/file"><img src="https://img.shields.io/badge/DOWNLOAD%20FILES-yellow" alt="Rainhost Files" width="150"></a>
   
 <a href="https://daki.cc/?aff=1259151615210819614"><img src="https://img.shields.io/badge/SIGNUP%20&%20DEPLOY-gold" alt="Scalingo Deploy" width="150"></a>
 </details
@@ -113,7 +113,7 @@
 **(3) SOLAR HOSTING PANEL(DISCORD) DEPLOYMENT**
 <details>
 <summary>TAP TO OPEN</summary>
-<a href="https://www.mediafire.com/file/1xyk52lqeubuhmq/BELLAH_XMD.zip/file"><img src="https://img.shields.io/badge/DOWNLOAD%20FILES-yellow" alt="Rainhost Files" width="150"></a>
+<a href="https://www.mediafire.com/file/bg2vyxvv8acy3s1/BELLAH_XMD%25282%2529.zip/file"><img src="https://img.shields.io/badge/DOWNLOAD%20FILES-yellow" alt="Rainhost Files" width="150"></a>
   
  <a href="https://solarhosting.cc/?aff=1259151615210819614"><img src="https://img.shields.io/badge/SIGNUP%20&%20DEPLOY-gold" alt="Scalingo Deploy" width="150"></a>
 </details
