@@ -21,7 +21,7 @@
    
 <p align="center">
 
-  <a aria-label="Join our chat group for updates" href="(https://chat.whatsapp.com/IGc9Xl3Ta5C8LNnV0rUK9s)" target="_blank">
+  <a aria-label="Join our chat group for updates" href="https://chat.whatsapp.com/IGc9Xl3Ta5C8LNnV0rUK9s" target="_blank">
     <img alt="telegram" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=telegram&logoColor=white" />
   </a>
  
