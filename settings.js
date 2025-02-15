@@ -26,7 +26,7 @@ global.botscript = 'https://whatsapp.com/channel/0029VaPZWbY1iUxVVRIIOm0D' //'ht
 global.packname = process.env.PACK_NAME ||"BELLAH XMD" //enter your stickers author name here
 global.author = "Giddy-Tennor"
 global.creator = "254703726139@s.whatsapp.net"
-global.xprefix = process.env.PREFIX ||'.'
+global.xprefix = process.env.BOT_PREFIX ||'.'
 global.premium = ["254703726139"] // Premium User
 global.hituet = 0
 
