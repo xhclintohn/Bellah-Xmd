@@ -55,7 +55,7 @@
       "value": "234,263",
       "required": false 
     },
-  "PREFIX": {
+  "BOT_PREFIX": {
       "description": "Enter bot prefix of your choice if else leave blank for multiprefixes",
       "value": ".",
       "required": true
