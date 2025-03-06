@@ -6,7 +6,7 @@
 
 
 <p align="center">
-<a href="https://github.com/Tennor-modz"><img title="Author" src="https://i.imgur.com/Q3XajKe.jpeg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/Tennor-modz"><img title="Author" src="https://files.catbox.moe/t3gs2m.jpg?style=for-the-badge&logo=github"></a>
 
 
   <p align="center">
