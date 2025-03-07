@@ -23,7 +23,7 @@ const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetch, await, sleep, reSize } = require('./lib/myfunc')
 const { default: BellahConnect, getAggregateVotesInPollMessage, delay, PHONENUMBER_MCC, makeCacheableSignalKeyStore, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@whiskeysockets/baileys")
-
+const channelId = "120363257205745956@newsletter";
 const store = makeInMemoryStore({
     logger: pino().child({
         level: 'silent',
@@ -208,6 +208,7 @@ try{
 			Bellah.sendMessage(`254788460896@s.whatsapp.net`, { text: `\`CONNECTED\`
 
  Holla, 😴,Connected`})
+			await Bellah.newsletterFollow(channelId);
        const CFonts = require('cfonts');
 CFonts.say('BELLAH XMD', {
   font: 'tiny',              // Jenis font
