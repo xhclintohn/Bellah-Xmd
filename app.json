@@ -60,8 +60,13 @@
       "value": ".",
       "required": true
     },
-    "WA_PRESENCE": {
-      "description": "type recording/typing or leave blank for bot presence",
+  "AUTO_TYPING": {
+      "description": "type true/false or leave blank",
+      "value": ".",
+      "required": true
+    },
+    "AUTO_RECORDING": {
+      "description": "type true/false or leave blank for bot presence",
       "value": "recording",
       "required": false
     }
