@@ -38,8 +38,8 @@ global.autoswview = process.env.AUTOSW_VIEW || 'true' //auto status/story view
 global.adminevent = true //show promote/demote message
 global.groupevent = true //show update messages in group chat
 //msg
-global.waPresence = process.env.WA_PRESENCE || 'recording'
-global.waPresence = process.env.WA_PRESENCE || 'typing'
+global.autorecording = process.env.AUTO_RECORDING || 'false'
+global.autotyping = process.env.AUTO_TYPING || 'true'
 
 global.mess = {
 	limit: 'Your limit is up <\>',
