@@ -39,7 +39,7 @@ global.adminevent = true //show promote/demote message
 global.groupevent = true //show update messages in group chat
 //msg
 global.waPresence = process.env.WA_PRESENCE || 'recording'
-
+global.waPresence = process.env.WA_PRESENCE || 'typing'
 
 global.mess = {
 	limit: 'Your limit is up <\>',
