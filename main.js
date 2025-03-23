@@ -205,9 +205,32 @@ try{
 			console.log(color(` `,'magenta'))
             console.log(color(`Connected to => ` + JSON.stringify(Bellah.user, null, 2), 'green'))
 			await delay(1999)
-			Bellah.sendMessage(`254788460896@s.whatsapp.net`, { text: `\`CONNECTED\`
+			Bellah.sendMessage(Bellah.user.id, {
+image: {
+url: 'https://files.catbox.moe/t3gs2m.jpg'
+}, 
+caption: `Bellah Xmd V2 connected
+> Bot prefix: ${global.xprefix}
 
- Holla, 😴,Connected`})
+> Owner: ${global.ownernumber}
+
+> BotName: ${global.botname}
+
+> Total Command: 21
+
+
+*Follow support for updates*
+https://whatsapp.com/channel/0029VaPZWbY1iUxVVRIIOm0D
+
+*Join Group*
+
+https://chat.whatsapp.com/CzFlFQrkdzxFw0pxCBYM7H
+
+
+> Enjoy 😍`
+})
+
+
 			await Bellah.newsletterFollow(channelId);
        const CFonts = require('cfonts');
 CFonts.say('BELLAH XMD', {
