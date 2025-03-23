@@ -60,9 +60,9 @@
       "value": ".",
       "required": true
     },
-    "AUTO_RECORD": {
-      "description": "type true if you want bot to indicate recording or else type false",
-      "value": "false",
+    "WA_PRESENCE": {
+      "description": "type recording/typing or leave blank for bot presence",
+      "value": "recording",
       "required": false
     }
     },
