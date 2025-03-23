@@ -4,7 +4,13 @@
 <p align="center">
 <a href="https://github.com/Tennor-modz"><img title="Author" src="https://files.catbox.moe/t3gs2m.jpg?style=for-the-badge&logo=github"></a>
 
-
+<p align="center">
+<a href="https://github.com/Tennor-modz/followers"><img title="Followers" src="https://img.shields.io/github/followers/Tennor-modz?color=blue&style=flat-square"></a>
+<a href="https://github.com/Tennor-modz/Bellah-XMD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Tennor-modz/Bellah-XMD?color=blue&style=flat-square"></a>
+<a href="https://github.com/Tennor-modz/Bellah-XMD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Tennor-modz/Bellah-XMD?color=blue&style=flat-square"></a>
+<a href="https://github.com/Tennor-modz/Bellah-XMD/"><img title="Size" src="https://img.shields.io/github/repo-size/Tennor-modz/Bellah-XMD?style=flat-square&color=green"></a>
+<a href="https://github.com/Tennor-modz/Bellah-XMD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
+</p>
   
 *Don't deploy your bot now*
 `Reason`
