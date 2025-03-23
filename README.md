@@ -11,7 +11,9 @@
 <a href="https://github.com/Tennor-modz/Bellah-XMD/"><img title="Size" src="https://img.shields.io/github/repo-size/Tennor-modz/Bellah-XMD?style=flat-square&color=green"></a>
 <a href="https://github.com/Tennor-modz/Bellah-XMD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 </p>
-  
+
+  ## VolTah Xmd Set up✅
+  1.  ***`Star ⭐` repository & Click [`FORK`](https://github.com/Tennor-modz/bellah-XMD/fork)***
 *Don't deploy your bot now*
 `Reason`
 * repo is under continuous maintenance
