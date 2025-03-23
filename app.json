@@ -17,7 +17,7 @@
 },
   "BOT_NAME": {
       "description": "Enter bot name of your choice here",
-      "value": "Bellah Xmd",
+      "value": "VolTah Xmd",
       "required": false
     },
   "OWNER_NUMBER": {
@@ -25,8 +25,8 @@
       "value": "254104245659",
       "required": true
     },
-  "TYPE_MENU": {
-      "description": "Enter menu of your type,,menu types are V1-V8",
+  "PACK_NAME": {
+      "description": "Enter your sticker pack name",
       "value": "V3",
       "required": false
     },
@@ -45,8 +45,8 @@
       "value": "",
       "required": false
     },
-  "AUTO_BLOCK": {
-      "description": "Type true if you want bot to block unknown numbers if else type false",
+  "MODE": {
+      "description": "Type true if you want bot status mode to be private if else type false",
       "value": "",
       "required": false
     },
