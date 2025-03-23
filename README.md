@@ -21,7 +21,7 @@
   2.  > **Deployment Site(Heroku $ Panel)**
 
 <a href='https://vol-tah-web.vercel.app/' target="_blank">
-  <img alt='VolTah Deploy' src='https://img.shields.io/badge/Get%20Pairing%20Code-orange?style=for-the-badge&logo=opencv&logoColor=black'/>
+  <img alt='VolTah Deploy' src='https://img.shields.io/badge/Deploy%20VolTah%20Xmd-orange?style=for-the-badge&logo=opencv&logoColor=black'/>
 </a>
 <br> 
 
