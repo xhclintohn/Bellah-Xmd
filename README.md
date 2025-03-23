@@ -4,8 +4,7 @@
 <p align="center">
 <a href="https://github.com/Tennor-modz"><img title="Author" src="https://files.catbox.moe/t3gs2m.jpg?style=for-the-badge&logo=github"></a>
 
-<p align="center">
-<a href="https://github.com/Tennor-modz"><img title="Author" src="https://e.top4top.io/m_3250qlhay1.mp4?style=for-the-badge&logo=github"></a>
+
   
 *Don't deploy your bot now*
 `Reason`
