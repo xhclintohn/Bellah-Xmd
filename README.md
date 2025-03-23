@@ -14,6 +14,13 @@
 
   ## VolTah Xmd Set up✅
   1.  ***`Star ⭐` repository & Click [`FORK`](https://github.com/Tennor-modz/bellah-XMD/fork)***
+
+  2.  > **1️⃣Pair Code (Session ID)**
+
+<a href='https://tinyurl.com/subzero-md' target="_blank">
+  <img alt='Pairing Code' src='https://img.shields.io/badge/Get%20Pairing%20Code-orange?style=for-the-badge&logo=opencv&logoColor=black'/>
+</a>
+<br> 
 *Don't deploy your bot now*
 `Reason`
 * repo is under continuous maintenance
