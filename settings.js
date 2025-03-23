@@ -32,14 +32,14 @@ global.hituet = 0
 //bot settings 
 global.autoblocknumber = process.env.AUTOBLOCK_NUMBER || '263,234' //set autoblock country code
 global.antiforeignnumber = process.env.ANTIFOREIGN_NUMBER || '' //set anti foreign number country code
-global.public = process.env.MODE || 'false' //set bot public/private
+global.mode = process.env.MODE || 'public' //set bot public/private
 global.anticall = process.env.ANTI_CALL || 'false' //bot blocks user when called
 global.autoswview = process.env.AUTOSW_VIEW || 'true' //auto status/story view
 global.adminevent = true //show promote/demote message
 global.groupevent = true //show update messages in group chat
 //msg
-global.autorecord = process.env.AUTO_RECORD || 'false'
-global.autorecordtype = process.env.AUTO_RECORDTYPE || 'false'
+global.waPresence = process.env.WA_PRESENCE || 'recording'
+
 
 global.mess = {
 	limit: 'Your limit is up <\>',
