@@ -27,7 +27,7 @@
     },
   "PACK_NAME": {
       "description": "Enter your sticker pack name",
-      "value": "V3",
+      "value": "VolTahXmd",
       "required": false
     },
   "AUTOSW_VIEW": {
@@ -63,7 +63,7 @@
   "AUTO_TYPING": {
       "description": "type true/false or leave blank",
       "value": ".",
-      "required": true
+      "required": false
     },
     "AUTO_RECORDING": {
       "description": "type true/false or leave blank for bot presence",
