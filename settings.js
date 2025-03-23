@@ -23,16 +23,13 @@ global.wagc = "https://chat.whatsapp.com/CzFlFQrkdzxFw0pxCBYM7H" //"https://chat
 global.themeemoji = '🪀'
 global.wm = "GIDDY TENNOR"
 global.botscript = 'https://whatsapp.com/channel/0029VaPZWbY1iUxVVRIIOm0D' //'https://chat.whatsapp.com/JmsgzJllAAB8zHfQcJXxES' //script link
-global.packname = process.env.PACK_NAME ||"BELLAH XMD" //enter your stickers author name here
+global.packname = process.env.PACK_NAME ||"VolTah Xmd" //enter your stickers author name here
 global.author = "Giddy-Tennor"
 global.creator = "254703726139@s.whatsapp.net"
 global.xprefix = process.env.BOT_PREFIX ||'.'
-global.premium = ["254703726139"] // Premium User
 global.hituet = 0
 
-//bot sett
-global.typemenu = process.env.TYPE_MENU || 'v2' // menu type 'v1' => 'v8' 
-global.typereply = process.env.TYPE_REPLY ||'v1' // reply type 'v1' => 'v3'
+//bot settings 
 global.autoblocknumber = process.env.AUTOBLOCK_NUMBER || '263,234' //set autoblock country code
 global.antiforeignnumber = process.env.ANTIFOREIGN_NUMBER || '' //set anti foreign number country code
 global.welcome = process.env.WELCOME || 'false' //welcome/left in groups
@@ -55,7 +52,7 @@ global.mess = {
     success: 'Succes •'
 }
 //thumbnail
-global.thumb = fs.readFileSync('./XMEDIA/theme/bellah.jpg')
+
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
