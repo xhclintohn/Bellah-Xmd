@@ -64,7 +64,11 @@ B.Scalingo  [`Soon`](hhttps://youtu.be/XAEvjrFIoiw?si=zdVjdtav3ZtsjTRz).
 
 
 
-C.Panel deployment  [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm)
+C.Panel deployment  [`Tutorial one`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm)
+
+
+
+[`Tutorial two`](https://youtu.be/bBOCsPcQ7vA?si=U4bQBAp7GUEWGuF2)
 
 
 
