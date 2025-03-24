@@ -62,7 +62,18 @@ C.Panel deployment  [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_m
 
 
 
+# Regards 
 
+Thanks to...
+
+<div align="center">
+
+| [![GiddyTennor](https://github.com/Tennor-modz.png?lenght=50width=50)](https://github.com/Tennor-modz)|
+|----|
+* [`Fortunatus mokaya`](https://github.com/Fortunatusmokaya) ***Author, Owner***
+
+
+* [`Malik `](https://github.com/darkLo1rd) ***Debugging, random fixes and additions 🌱***
 
 
 
