@@ -216,7 +216,7 @@ caption: ` VolTah Xmd (Bellah Xmd V2) connected
 
 > BotName: ${global.botname}
 
-> Total Command: 41
+> Total Command: 69
 
 > Mode:  ${Bellah.public ? '𝗣𝘂𝗯𝗹𝗶𝗰 ϟ' : '𝗣𝗿𝗶𝘃𝗮𝘁𝗲 ϟ'}
 
@@ -234,7 +234,7 @@ https://chat.whatsapp.com/CzFlFQrkdzxFw0pxCBYM7H
 
 			await Bellah.newsletterFollow(channelId);
        const CFonts = require('cfonts');
-CFonts.say('BELLAH XMD', {
+CFonts.say('BELLAH XMD V2', {
   font: 'tiny',              // Jenis font
   align: 'left',            // Posisi teks (left, center, right)
   colors: ['blue', 'white'],    // Warna teks
