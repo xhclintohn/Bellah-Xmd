@@ -70,14 +70,13 @@ Thanks to...
 
 | [![GiddyTennor](https://github.com/Tennor-modz.png?lenght=50width=50)](https://github.com/Tennor-modz)|
 |----|
-* [`Fortunatus mokaya`](https://github.com/Fortunatusmokaya) ***Author, Owner***
+* [`GiddyTennor`](https://github.com/Tennor-modz) ***Author, Owner, Developer***
 
 
-* [`Malik `](https://github.com/darkLo1rd) ***Debugging, random fixes and additions 🌱***
+* [`Tylor `](https://github.com/Dark-Xploit) ***Setting up heroku deployment and Whiskey baiyleys***
 
 
+> Version 2.0.0
 
-*Don't deploy your bot now*
-`Reason`
-* repo is under continuous maintenance
-* bot will have less commands
+
+©𝗩𝗼𝗹𝗧𝗮𝗵 𝗫𝗺𝗱 - 𝗕𝗲𝗹𝗹𝗮𝗵 𝗫𝗺𝗱 𝗩2 2025
