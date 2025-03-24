@@ -38,7 +38,7 @@
 
 *𝗧𝘂𝗧𝗼𝗿𝗶𝗮𝗹𝘀*
 
-A.* Render [`Tutorial`](https://youtu.be/bj59ynAaa3Y?si=cJpQPr1XaP7q-tDF)
+A.Render [`Tutorial`](https://youtu.be/bj59ynAaa3Y?si=cJpQPr1XaP7q-tDF)
 
 
 
@@ -47,7 +47,7 @@ A.* Render [`Tutorial`](https://youtu.be/bj59ynAaa3Y?si=cJpQPr1XaP7q-tDF)
 
 
 
-B.* Scalingo  [`Tutorial`](hhttps://youtu.be/XAEvjrFIoiw?si=zdVjdtav3ZtsjTRz).
+B.Scalingo  [`Tutorial`](hhttps://youtu.be/XAEvjrFIoiw?si=zdVjdtav3ZtsjTRz).
 
 
 
@@ -57,7 +57,7 @@ B.* Scalingo  [`Tutorial`](hhttps://youtu.be/XAEvjrFIoiw?si=zdVjdtav3ZtsjTRz).
 
 
 
-C.* Panel deployment  [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm)
+C.Panel deployment  [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm)
 
 
 
