@@ -47,7 +47,7 @@ A.Render [`Tutorial`](https://youtu.be/bj59ynAaa3Y?si=cJpQPr1XaP7q-tDF)
 
 
 
-B.Scalingo  [`Tutorial`](hhttps://youtu.be/XAEvjrFIoiw?si=zdVjdtav3ZtsjTRz).
+B.Scalingo  [`Soon`](hhttps://youtu.be/XAEvjrFIoiw?si=zdVjdtav3ZtsjTRz).
 
 
 
