@@ -26,7 +26,12 @@
 <br> 
 
 
+> **Bot File(Panel Deployment)**
 
+<a href='https://www.mediafire.com/file/utx6dg8afwqcgan/BELLAH_XMD%25282%2529.zip/file/' target="_blank">
+  <img alt='Pairing Code' src='https://img.shields.io/badge/Get%20Zip%20Herr-darkpink?style=for-the-badge&logo=opencv&logoColor=black'/>
+</a>
+<br> 
 
 
 
