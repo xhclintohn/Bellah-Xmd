@@ -38,18 +38,34 @@
 
 *𝗧𝘂𝗧𝗼𝗿𝗶𝗮𝗹𝘀*
 
-* Render
+A.* Render
 
 
 
 
 
-* Scalingo
+
+
+
+B.* Scalingo
 
 
 
 
-* Panel deployment 
+
+
+
+
+
+C.* Panel deployment 
+
+
+
+
+
+
+
+
 *Don't deploy your bot now*
 `Reason`
 * repo is under continuous maintenance
