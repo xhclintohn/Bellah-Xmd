@@ -216,8 +216,9 @@ caption: `Bellah Xmd V2 connected
 
 > BotName: ${global.botname}
 
-> Total Command: 21
+> Total Command: 28
 
+> Mode:  ${Bellah.public ? '𝗣𝘂𝗯𝗹𝗶𝗰 ϟ' : '𝗣𝗿𝗶𝘃𝗮𝘁𝗲 ϟ'}
 
 *Follow support for updates*
 https://whatsapp.com/channel/0029VaPZWbY1iUxVVRIIOm0D
