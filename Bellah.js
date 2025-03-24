@@ -1016,7 +1016,7 @@ let Menu = `
 │ ─≽ *Name* : ${pushname}
 │ ─≽ *Version* :*𝟐.𝟎.𝟎*
 │ ─≽ *Runtime* : ${runtime(process.uptime())}
-│ ─≽ *Totalfeature* : 35
+│ ─≽ *Totalfeature* : 41
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1041,6 +1041,8 @@ let Menu = `
 │ ─≽ *play*
 │ ─≽ *tiktok*
 │ ─≽ *vv*
+│ ─≽ *anime*
+│ ─≽ *detiknews*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1084,6 +1086,14 @@ let Menu = `
 │ ─≽ *tovideo*
 │ ─≽ *toaudio*
 │ ─≽ *tovn*
+│ ─≽ *translate*
+│ ─≽ *tourl*
+│──────♢
+┗━━━━━━━━━━━━━━━♢
+
+┏━━「 \`Religion\` 」
+│ ─≽ *Quran*
+│ ─≽ *Bible*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 ` 
@@ -1097,6 +1107,202 @@ let Menu = `
 await  Bellah.sendMessage(m.chat, { audio: {url: "https://files.catbox.moe/idskdm.mp3"}, mimetype: 'audio/mp4', ptt:true}, { quoted: loli });
 }
 break   
+//========================================================\\
+case 'translate':{
+  	if (!q) return m.reply(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
+  	const defaultLang = 'en'
+const tld = 'cn'
+    let err = `
+ *Example:*
+
+*${prefix + command}* <id> [text]
+*${prefix + command}* en Hello World
+
+≡ *List of supported languages:* 
+https://cloud.google.com/translate/docs/languages
+`.trim()
+    let lang = args[0]
+    let text = args.slice(1).join(' ')
+    if ((args[0] || '').length !== 2) {
+        lang = defaultLang
+        text = args.join(' ')
+    }
+    if (!text && m.quoted && m.quoted.text) text = m.quoted.text
+    try {
+       let result = await translate(text, { to: lang, autoCorrect: true }).catch(_ => null) 
+       reply(result.text)
+    } catch (e) {
+        return m.reply(err)
+    } 
+    }
+    break
+//========================================================\\
+case "tourl": {
+if (!/image/.test(mime)) return m.reply(example("tag/reply photo"))
+let media = await Bellah.downloadAndSaveMediaMessage(qmsg)
+const { ImageUploadService } = require('node-upload-images')
+const service = new ImageUploadService('pixhost.to');
+let { directLink } = await service.uploadFromBinary(fs.readFileSync(media), 'skyzopedia.png');
+
+let teks = directLink.toString()
+await Bellah.sendMessage(m.chat, {text: teks}, {quoted: m})
+await fs.unlinkSync(media)
+}
+break
+//========================================================\\
+case 'anime': {
+if (!text) return m.reply(`Which anime are you lookin for?`)
+const malScraper = require('mal-scraper')
+await XeonStickWait()
+        const anime = await malScraper.getInfoFromName(text).catch(() => null)
+        if (!anime) return m.reply(`Could not find`)
+let animetxt = `
+🎀 *Title: ${anime.title}*
+🎋 *Type: ${anime.type}*
+🎐 *Premiered on: ${anime.premiered}*
+💠 *Total Episodes: ${anime.episodes}*
+📈 *Status: ${anime.status}*
+💮 *Genres: ${anime.genres}
+📍 *Studio: ${anime.studios}*
+🌟 *Score: ${anime.score}*
+💎 *Rating: ${anime.rating}*
+🏅 *Rank: ${anime.ranked}*
+💫 *Popularity: ${anime.popularity}*
+♦️ *Trailer: ${anime.trailer}*
+🌐 *URL: ${anime.url}*
+❄ *Description:* ${anime.synopsis}*`
+                await Bellah.sendMessage(m.chat,{image:{url:anime.picture}, caption:animetxt},{quoted:m})
+                }
+                break
+//========================================================\\
+case 'bible': {
+  	const { translate } = require('@vitalets/google-translate-api')
+  	const BASE_URL = 'https://bible-api.com'
+  try {
+    // Extract the chapter number or name from the command text.
+    let chapterInput = m.text.split(' ').slice(1).join('').trim()
+    if (!chapterInput) {
+      throw new Error(`Please specify the chapter number or name. Example: ${prefix + command} john 3:16`)
+    }
+    // Encode the chapterInput to handle special characters
+    chapterInput = encodeURIComponent(chapterInput);
+    // Make an API request to fetch the chapter information.
+    let chapterRes = await fetch(`${BASE_URL}/${chapterInput}`)
+    if (!chapterRes.ok) {
+      throw new Error(`Please specify the chapter number or name. Example: ${prefix + command} john 3:16`)
+    }
+    let chapterData = await chapterRes.json();
+    let translatedChapterHindi = await translate(chapterData.text, { to: 'hi', autoCorrect: true })
+    let translatedChapterEnglish = await translate(chapterData.text, { to: 'en', autoCorrect: true })
+    let bibleChapter = `
+📖 *The Holy Bible*\n
+📜 *Chapter ${chapterData.reference}*\n
+Type: ${chapterData.translation_name}\n
+Number of verses: ${chapterData.verses.length}\n
+🔮 *Chapter Content (English):*\n
+${translatedChapterEnglish.text}\n
+🔮 *Chapter Content (Hindi):*\n
+${translatedChapterHindi.text}`
+    m.reply(bibleChapter)
+  } catch (error) {
+    m.reply(`Error: ${error.message}`)
+  }
+  }
+  break
+//========================================================\\
+case 'quran': {
+    try {
+    
+    let surahInput = m.text.split(' ')[1]
+    if (!surahInput) {
+      throw new Error(`Please specify the surah number or name`)
+    }
+    let surahListRes = await fetch('https://quran-endpoint.vercel.app/quran')
+    let surahList = await surahListRes.json()
+    let surahData = surahList.data.find(surah => 
+        surah.number === Number(surahInput) || 
+        surah.asma.ar.short.toLowerCase() === surahInput.toLowerCase() || 
+        surah.asma.en.short.toLowerCase() === surahInput.toLowerCase()
+    )
+    if (!surahData) {
+      throw new Error(`Couldn't find surah with number or name "${surahInput}"`)
+    }
+    let res = await fetch(`https://quran-endpoint.vercel.app/quran/${surahData.number}`)
+    if (!res.ok) {
+      let error = await res.json();
+      throw new Error(`API request failed with status ${res.status} and message ${error.message}`)
+    }
+
+    let json = await res.json()
+
+    
+    let translatedTafsirUrdu = await translate(json.data.tafsir.id, { to: 'ur', autoCorrect: true })
+
+    
+    let translatedTafsirEnglish = await translate(json.data.tafsir.id, { to: 'en', autoCorrect: true })
+
+    let quranSurah = `
+🕌 *Quran: The Holy Book*\n
+📜 *Surah ${json.data.number}: ${json.data.asma.ar.long} (${json.data.asma.en.long})*\n
+Type: ${json.data.type.en}\n
+Number of verses: ${json.data.ayahCount}\n
+🔮 *Explanation (Urdu):*\n
+${translatedTafsirUrdu.text}\n
+🔮 *Explanation (English):*\n
+${translatedTafsirEnglish.text}`
+
+    m.reply(quranSurah)
+
+    if (json.data.recitation.full) {
+      Bellah.sendMessage(m.chat, { audio: {url: json.data.recitation.full}, mimetype: 'audio/mp4', ptt: true, fileName: `recitation.mp3`, }, {quoted: m})
+    }
+  } catch (error) {
+    m.reply(`Error: ${error.message}`)
+  }
+  }
+  break
+//========================================================\\
+case 'detiknews' : {
+  if (!text) {
+    return m.reply(`Provide a request.\n\nExample:\n.${command} ruu tni`)
+  }
+
+  try {
+    const url = `https://www.detik.com/search/searchall?query=${encodeURIComponent(text)}`
+    const { data } = await axios.get(url)
+    const $ = cheerio.load(data)
+
+    let result = []
+    $('.media__text').each((_, el) => {
+      const media = $(el).find('h2').text().trim()
+      const title = $(el).find('a').text().trim()
+      const href = $(el).find('a').attr('href')
+      const description = $(el).find('.media__desc').text().trim()
+
+      if (title && href) {
+        result.push({
+          media,
+          title,
+          url: href,
+          description
+        })
+      }
+    })
+
+    if (!result.length) return m.reply('❌ provide a valid request.')
+
+    const list = result.slice(0, 10).map(item => {
+      return `📰 *${item.title}*\n📌 ${item.media || 'Detik News'}\n🔗 ${item.url}`
+    }).join('\n\n')
+
+    await m.reply(`🔍 *Here are the latest news:*\n\n${list}`)
+    
+  } catch (e) {
+    console.error(e)
+    m.reply('⚠️ failed to get data.')
+  }
+}
+break
 //========================================================\\
 case 'storyaudio':
 			case 'upswaudio': {
@@ -1293,7 +1499,7 @@ break
             
 //========================================================\\
 case "ping": {
-await m.reply(`voltah speed check`)
+await m.reply(`𝗩𝗼𝗹𝗧𝗮𝗵 𝗦𝗽𝗲𝗲𝗱 𝗖𝗵𝗲𝗰𝗸`)
   const memoryUsage = process.memoryUsage();
   const cpuInfo = os.cpus().map(cpu => ({
     total: Object.values(cpu.times).reduce((a, b) => a + b, 0),
@@ -1315,7 +1521,7 @@ await m.reply(`voltah speed check`)
 
   const startTime = performance.now();
   const latency = performance.now() - startTime;
-  const finalStatus = `𝗩𝗼𝗹𝘁𝗮𝗵 𝗫𝗺𝗱: ${latency.toFixed(4)} ms`;
+  const finalStatus = `𝗩𝗼𝗹𝗧𝗮𝗵 𝗫𝗺𝗱: ${latency.toFixed(4)} ms`;
   m.reply(finalStatus);
 }
 break;  
