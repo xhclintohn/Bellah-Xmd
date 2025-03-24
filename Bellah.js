@@ -1016,7 +1016,7 @@ let Menu = `
 │ ─≽ *Name* : ${pushname}
 │ ─≽ *Version* :*𝟐.𝟎.𝟎*
 │ ─≽ *Runtime* : ${runtime(process.uptime())}
-│ ─≽ *Totalfeature* : 41
+│ ─≽ *Totalfeature* : 69
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1043,6 +1043,14 @@ let Menu = `
 │ ─≽ *vv*
 │ ─≽ *anime*
 │ ─≽ *detiknews*
+│ ─≽ *apk*
+│ ─≽ *spotifydown*
+│ ─≽ *spotifysearch*
+│ ─≽ *igstalk*
+│ ─≽ *tiktokstalk*
+│ ─≽ *ytmp4*
+│ ─≽ *mediafire*
+│ ─≽ *play2*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1054,6 +1062,16 @@ let Menu = `
 │ ─≽ *demote*
 │ ─≽ *kickall*
 │ ─≽ *invite*
+│ ─≽ *add*
+│ ─≽ *open*
+│ ─≽ *close*
+│ ─≽ *antilinkgc*
+│ ─≽ *antilink*
+│ ─≽ *poll*
+│ ─≽ *setppgc*
+│ ─≽ *listonline*
+│ ─≽ *resetlink*
+│ ─≽ *setnamegc*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1073,11 +1091,24 @@ let Menu = `
 │ ─≽ *storyaudio*
 │ ─≽ *storyimage*
 │ ─≽ *storyvideo*
+│ ─≽ *Creategc*
+│ ─≽ *listgc*
+│ ─≽ *setpp*
+│ ─≽ *onlypc*
+│ ─≽ *onlygc*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
 ┏━━「 \`Maths\` 」
 │ ─≽ *kalkulator*
+│──────♢
+┗━━━━━━━━━━━━━━━♢
+
+┏━━「 \`Search\` 」
+│ ─≽ *country*
+│ ─≽ *quiz*
+│ ─≽ *yts*
+│ ─≽ *trackip*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1096,6 +1127,12 @@ let Menu = `
 │ ─≽ *Bible*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
+
+┏━━「 \`Developer\` 」
+│ ─≽ *githubstalk*
+│ ─≽ *gitclone*
+│──────♢
+┗━━━━━━━━━━━━━━━♢
 ` 
     Bellah.sendMessage(m.chat, {
         image: {
@@ -1106,7 +1143,671 @@ let Menu = `
     }, { quoted: loli });
 await  Bellah.sendMessage(m.chat, { audio: {url: "https://files.catbox.moe/idskdm.mp3"}, mimetype: 'audio/mp4', ptt:true}, { quoted: loli });
 }
-break   
+break
+//========================================================\\
+case 'play2': {
+    if (args.length === 0) return Bellah.sendMessage(m.chat, { text: `which song from YouTube do you want to download?, example:\nplay dj kane` }, { quoted: m });
+
+    const query = args.join(' ');
+    const axios = require('axios');
+    const yts = require('yt-search');
+
+    try {
+        const search = await yts(query);
+        if (!search || search.all.length === 0) return Bellah.sendMessage(m.chat, { text: 'Lagu yang Anda cari tidak ditemukan.' }, { quoted: m });
+
+        const video = search.all[0];
+        const detail = `* Youtube Audio Play*
+
+*❖ Title* : ${video.title}
+*❖ Views* : ${video.views}
+*❖ Artist* : ${video.author.name}
+*❖ Period* : ${video.ago}
+*❖ URL* : ${video.url}
+_processing audio..._`;
+
+        await Bellah.sendMessage(m.chat, { text: detail }, { quoted: m });
+
+        const format = 'mp3';
+        const url = `https://p.oceansaver.in/ajax/download.php?format=${format}&url=${encodeURIComponent(video.url)}&api=dfcb6d76f2f6a9894gjkege8a4ab232222`;
+
+        const response = await axios.get(url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            }
+        });
+
+        if (!response.data || !response.data.success) return Bellah.sendMessage(m.chat, { text: 'audio.' }, { quoted: m });
+
+        const { id, title, info } = response.data;
+        const { image } = info;
+
+        while (true) {
+            const progress = await axios.get(`https://p.oceansaver.in/ajax/progress.php?id=${id}`, {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+                }
+            });
+
+            if (progress.data && progress.data.success && progress.data.progress === 1000) {
+                const downloadUrl = progress.data.download_url;
+
+                await Bellah.sendMessage(m.chat, {
+                    audio: { url: downloadUrl },
+                    mimetype: 'audio/mpeg',
+                    fileName: `${title}.mp3`
+                }, { quoted: m });
+                break;
+            }
+            await new Promise(resolve => setTimeout(resolve, 5000));
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        Bellah.sendMessage(m.chat, { text: 'Could not find your song.' }, { quoted: loli });
+    }
+}
+break;
+//========================================================\\
+case 'trackip':
+{
+if (!text) return m.reply(`*Example:* ${prefix + command} 112.90.150.204`);
+try {
+let res = await fetch(`https://ipwho.is/${text}`).then(result => result.json());
+
+const formatIPInfo = (info) => {
+ return `
+*IP Information*
+• IP: ${info.ip || 'N/A'}
+• Success: ${info.success || 'N/A'}
+• Type: ${info.type || 'N/A'}
+• Continent: ${info.continent || 'N/A'}
+• Continent Code: ${info.continent_code || 'N/A'}
+• Country: ${info.country || 'N/A'}
+• Country Code: ${info.country_code || 'N/A'}
+• Region: ${info.region || 'N/A'}
+• Region Code: ${info.region_code || 'N/A'}
+• City: ${info.city || 'N/A'}
+• Latitude: ${info.latitude || 'N/A'}
+• Longitude: ${info.longitude || 'N/A'}
+• Is EU: ${info.is_eu ? 'Yes' : 'No'}
+• Postal: ${info.postal || 'N/A'}
+• Calling Code: ${info.calling_code || 'N/A'}
+• Capital: ${info.capital || 'N/A'}
+• Borders: ${info.borders || 'N/A'}
+• Flag:
+ - Image: ${info.flag?.img || 'N/A'}
+ - Emoji: ${info.flag?.emoji || 'N/A'}
+ - Emoji Unicode: ${info.flag?.emoji_unicode || 'N/A'}
+• Connection:
+ - ASN: ${info.connection?.asn || 'N/A'}
+ - Organization: ${info.connection?.org || 'N/A'}
+ - ISP: ${info.connection?.isp || 'N/A'}
+ - Domain: ${info.connection?.domain || 'N/A'}
+• Timezone:
+ - ID: ${info.timezone?.id || 'N/A'}
+ - Abbreviation: ${info.timezone?.abbr || 'N/A'}
+ - Is DST: ${info.timezone?.is_dst ? 'Yes' : 'No'}
+ - Offset: ${info.timezone?.offset || 'N/A'}
+ - UTC: ${info.timezone?.utc || 'N/A'}
+ - Current Time: ${info.timezone?.current_time || 'N/A'}
+`;
+};
+ 
+if (!res.success) throw new Error(`IP ${text} not found!`);
+await Bellah.sendMessage(m.chat, { location: { degreesLatitude: res.latitude, degreesLongitude: res.longitude } }, { ephemeralExpiration: 604800 });
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+await delay(2000);
+m.reply(formatIPInfo(res)); 
+} catch (e) { 
+m.reply(`Error: Unable to retrieve data for IP ${text}`);
+}
+}
+break
+//========================================================\\
+case 'mediafire': {
+  if (!text) return m.reply('provide a mediafire link');
+  const url = `https://bk9.fun/download/mediafire?url=${text}`;
+  axios.get(url)
+    .then(response => {
+      const result = response.data;
+      if (result.status) {
+        const link = result.BK9.link;
+        axios.get(link, { responseType: 'arraybuffer' })
+          .then(response => {
+            const buffer = Buffer.from(response.data, 'binary');
+            Bellah.sendMessage(m.chat, { document: buffer, filename: 'file.zip', mimetype: 'application/zip' }, { quoted: m });
+          })
+          .catch(error => {
+            m.reply('Error: ' + error.message);
+          });
+      } else {
+        m.reply('Gagal mengunduh file MediaFire');
+      }
+    })
+    .catch(error => {
+      m.reply('Error: ' + error.message);
+    });
+  break;
+}
+//========================================================\\
+case 'setnamegc':
+            case 'setsubject':
+                if (!m.isGroup) return m.reply(mess.group)
+                if (!isAdmins && !isGroupOwner && !Owner) return reply(mess.admin)
+                if (!isBotAdmins) return m.reply(mess.admin)
+                if (!text) return reply('Text ?')
+                await Bellah.groupUpdateSubject(m.chat, text)
+                m.reply(mess.done)
+                break
+//========================================================\\
+case 'yts': case 'ytsearch': {
+                if (!text) return m.reply(`Example : ${prefix + command} story wa anime`)
+                let yts = require("yt-search")
+                let search = await yts(text)
+                let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
+                let no = 1
+                for (let i of search.all) {
+                    teks += `${themeemoji} No : ${no++}\n${themeemoji} Type : ${i.type}\n${themeemoji} Video ID : ${i.videoId}\n${themeemoji} Title : ${i.title}\n${themeemoji} Views : ${i.views}\n${themeemoji} Duration : ${i.timestamp}\n${themeemoji} Uploaded : ${i.ago}\n${themeemoji} Url : ${i.url}\n\n─────────────────\n\n`
+                }
+                Bellah.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: loli })
+            }
+            break
+//========================================================\\
+case "ytmp4":
+case "ytvideo": {
+ if (!q) return m.reply(`Example: ${prefix + command} https://youtube.com/watch?v=CVLeZpg6Kzk 144/240/360/480/720/1080`);
+ const args = q.split(' ');
+ const url = args[0];
+ const availableResolutions = ['144', '240', '360', '480', '720', '1080'];
+ let quality = args[1] && availableResolutions.includes(args[1]) ? args[1] : '480';
+ if (!url.match(/^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)) {
+ return m.reply(`Please provide a valid YouTube URL\n\nAvailable resolutions: ${availableResolutions.join(', ')}`);
+ }
+ m.reply(`processing your request`);
+ try {
+ const apiUrl = `https://api.hiuraa.my.id/downloader/savetube?url=${encodeURIComponent(url)}&format=${quality}`;
+ const response = await fetch(apiUrl);
+ const data = await response.json();
+ if (!data.status || !data.result) {
+ return m.reply('Failed to download the video');
+ }
+ const { title, duration, thumbnail, download } = data.result;
+ await Bellah.sendMessage(m.chat, {
+ image: { url: thumbnail },
+ caption: `*${title}*\n*${quality}p* | *${duration}*`
+ }, { quoted: loli });
+ 
+ await Bellah.sendMessage(m.chat, {
+ video: { url: download },
+ mimetype: 'video/mp4'
+ }, { quoted: loli });
+ 
+ } catch (error) {
+ console.error('Error downloading YouTube video:', error);
+ m.reply('An error occurred while downloading the video');
+ }
+ }
+ break
+
+//========================================================\\
+case 'git': case 'gitclone':
+if (!args[0]) return m.reply(`Where is the link?\nExample :\n${prefix}${command} https://github.com/DGXeon/XMEDIA`)
+if (!isUrl(args[0]) && !args[0].includes('github.com')) return m.reply(`Link invalid!!`)
+let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
+    let [, user, repo] = args[0].match(regex1) || []
+    repo = repo.replace(/.git$/, '')
+    let url = `https://api.github.com/repos/${user}/${repo}/zipball`
+    let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
+    Bellah.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: loli }).catch((err) => reply(mess.error))
+break
+
+
+ //========================================================\\
+case 'tiktokstalk':
+case 'ttstalk': {
+    if (!text) return m.reply(`Provide TikTok Username\n\nExample: ${prefix + command} `);
+    Bellah.sendMessage(m.chat, { react: { text: '🕒', key: m.key } });
+    
+    try {
+        const respon = await fetchJson(`https://api.elxyzgpt.xyz/stalk/tiktok?apikey=KC-d25a3f0c02be4021&username=${encodeURIComponent(text)}`);
+        const user = respon.result.user;
+        const stats = respon.result.stats;
+        let teks = `
+┌──「 *STALKING* 」
+▢ *🔖 Name:* ${user.nickname}
+▢ *🔖 Username:* ${user.uniqueId}
+▢ *👥 Followers:* ${stats.followerCount}
+▢ *🫂 Following:* ${stats.followingCount}
+▢ *📌 Bio:* ${user.signature}
+▢ *🏝️ Posts:* ${stats.videoCount}
+▢ *❣️ Likes:* ${stats.heartCount}
+▢ *🔗 Link:* https://tiktok.com/@${user.uniqueId}
+└────────────`;
+
+        await Bellah.sendMessage(
+            m.chat, 
+            { image: { url: user.avatarLarger }, caption: teks }, 
+            { quoted: loli }
+        );
+    } catch (err) {
+        console.error(err);
+        m.reply(`yooh. Provide valid TikTok username.`);
+    }
+}
+break;
+
+//========================================================\\
+case 'igstalk': {
+if (!args[0]) return m.reply(`Enter Instagram Username\n\nExample: ${prefix + command} giddy_tennor_`)
+const fg = require('api-dylux')
+    try {
+    let res = await fg.igStalk(args[0])
+    let te = `
+┌──「 *STALKING* 
+▢ *🔖Name:* ${res.name} 
+▢ *🔖Username:* ${res.username}
+▢ *👥Follower:* ${res.followersH}
+▢ *🫂Following:* ${res.followingH}
+▢ *📌Bio:* ${res.description}
+▢ *🏝️Posts:* ${res.postsH}
+▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
+└────────────`
+     await Bellah.sendMessage(m.chat, {image: { url: res.profilePic }, caption: te }, {quoted: loli})
+      } catch {
+        m.reply(`Make sure the username comes from *Instagram*`)
+      }
+}
+break
+
+//========================================================\\
+case 'ghstalk': case 'githubstalk':{
+if (!q) return m.reply(`Example ${prefix+command} GiddyTennor`)
+await reply(`processing data`)
+let githubstalk = require('./lib/scraper')
+aj = await githubstalk.githubstalk(`${q}`)
+Bellah.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
+`*/ Github Stalker \\*
+
+Username : ${aj.username}
+Nickname : ${aj.nickname}
+Bio : ${aj.bio}
+Id : ${aj.id}
+Nodeid : ${aj.nodeId}
+Url Profile : ${aj.profile_pic}
+Url Github : ${aj.url}
+Type : ${aj.type}
+Admin : ${aj.admin}
+Company : ${aj.company}
+Blog : ${aj.blog}
+Location : ${aj.location}
+Email : ${aj.email}
+Public Repo : ${aj.public_repo}
+Public Gists : ${aj.public_gists}
+Followers : ${aj.followers}
+Following : ${aj.following}
+Created At : ${aj.ceated_at}
+Updated At : ${aj.updated_at}` }, { quoted: loli } )
+}
+break
+//========================================================\\
+case 'quiz': {
+  if (!text) return m.reply(`whats your question ?`)
+async function openai(text, logic) { // Membuat fungsi openai untuk dipanggil
+    let response = await axios.post("https://chateverywhere.app/api/chat/", {
+        "model": {
+            "id": "gpt-4",
+            "name": "GPT-4",
+            "maxLength": 32000,  // Sesuaikan token limit jika diperlukan
+            "tokenLimit": 8000,  // Sesuaikan token limit untuk model GPT-4
+            "completionTokenLimit": 5000,  // Sesuaikan jika diperlukan
+            "deploymentName": "gpt-4"
+        },
+        "messages": [
+            {
+                "pluginId": null,
+                "content": text, 
+                "role": "user"
+            }
+        ],
+        "prompt": logic, 
+        "temperature": 0.5
+    }, { 
+        headers: {
+            "Accept": "/*/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+        }
+    });
+    
+    let result = response.data;
+    return result;
+}
+
+let kanjuthann = await openai(text, "nama mu adalah Xrzteam, kamu adalah asisten kecerdasan buatan yang sering membantu orang lain jika ada yang ditanyakan")
+m.reply(kanjuthann)
+}
+break
+//========================================================\\
+case 'country': {
+				if (!text) return m.reply(' Provide a country name!\nExample: *.country Japan*');
+
+				try {
+					// Panggil API untuk mendapatkan data negara
+					let res = await fetchJson(`https://api.siputzx.my.id/api/tools/countryInfo?name=${encodeURIComponent(text)}`); // Ganti dengan URL API yang sesuai
+		
+					if (!res.status) return m.reply('fetching data .');
+
+					let data = res.data;
+					let continent = `${data.continent.name} ${data.continent.emoji}`;
+
+					// Format informasi negara
+					let info = `🌍 *Information data: ${data.name}*\n\n`;
+					info += `🌐 *Continent:* ${continent}\n`;
+					info += `🏙️ *Capital:* ${data.capital}\n`;
+					info += `📞 *Kode Telephone:* ${data.phoneCode}\n`;
+					info += `💱 *Currency:* ${data.currency}\n`;
+					info += `🗺️ *Map:* ${data.googleMapsLink}\n`;
+					info += `🌐 *TLD Internet:* ${data.internetTLD}\n`;
+					info += `🗣️ *Language:* ${data.languages.native.join(", ")}\n`;
+					info += `🏞️ *Distance:* ${data.area.squareKilometers.toLocaleString()} km² (${data.area.squareMiles.toLocaleString()} mi²)\n`;
+					info += `🚗 *Driving side:* ${data.drivingSide == "Centre" ? "left" : "right"}\n`;
+					info += `⭐ *Famous Traditions:* ${data.famousFor}\n`;
+					info += `🏛️ *Constitutionalform:* ${data.constitutionalForm}\n`;
+					info += `📍 *Coordinates:* ${data.coordinates.latitude}, ${data.coordinates.longitude}`;
+
+					// Kirim informasi bersama gambar bendera
+					await Bellah.sendMessage(m.chat, {
+						image: { url: data.flag },
+						caption: info
+					}, { quoted: loli });
+
+				} catch (error) {
+					console.log(error);
+					m.reply('Failed to get data.');
+				}
+			}
+			break;
+
+//========================================================\\
+case 'spotifysearch': {
+  if (!text) return m.reply('provide query');
+  const query = text;
+  const url = `https://api.siputzx.my.id/api/s/spotify?query=${query}`;
+  axios.get(url)
+    .then(response => {
+      const data = response.data.data;
+      if (!data.length) return reply('Lagu tidak ditemukan');
+      let result = 'Hasil Pencarian Lagu:\n\n';
+      data.forEach(lagu => {
+        result += `* Title: ${lagu.title}\n`;
+        result += `* Artist: ${lagu.artist.name}\n`;
+        result += `* Duration: ${lagu.duration}\n`;
+        result += `* Thumbnail: ${lagu.thumbnail}\n\n`;
+      });
+      reply(result);
+    })
+    .catch(error => {
+      m.reply('Error: ' + error.message);
+    });
+  break;
+}
+//========================================================\\
+case 'revoke':
+            case 'resetlink':
+                if (!m.isGroup) return m.reply(mess.group)
+                if (!isAdmins && !isGroupOwner && !Owner) return reply(mess.owner)
+                if (!isBotAdmins) return reply(mess.admin)
+                await Bellah.groupRevokeInvite(m.chat)
+                    .then(res => {
+                        m.reply(`Reset Success`)
+                    })
+            break
+//========================================================\\
+case 'listonline': case 'liston': {
+				if (!m.isGroup) return m.reply(mess.group)
+				let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
+				if (!store.presences || !store.presences[id]) return m.reply('This is the online list!')
+				let online = [...Object.keys(store.presences[id]), botNumber]
+				await Bellah.sendMessage(m.chat, { text: 'List Online:\n\n' + online.map(v => setv + ' @' + v.replace(/@.+/, '')).join`\n`, mentions: online }, { quoted: m }).catch((e) => m.reply('Gagal'))
+			}
+			break
+//========================================================\\
+case 'spotifydown': {
+  if (!text) return m.reply('provide a spotify link');
+  const url = `https://fastrestapis.fasturl.cloud/downup/spotifydown?url=${encodeURIComponent(text)}`;
+  axios.get(url)
+    .then(response => {
+      const result = response.data;
+      if (result.status === 200) {
+        const metadata = result.result.metadata;
+        const link = result.result.link;
+        const judul = metadata.title;
+        const artis = metadata.artists;
+        const album = metadata.album;
+        const cover = metadata.cover;
+        const releaseDate = metadata.releaseDate;
+        Bellah.sendMessage(m.chat, { audio: { url: link }, filename: `${judul}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m, caption: `Judul: ${judul}\nArtis: ${artis}\nAlbum: ${album}\nRelease Date: ${releaseDate}` });
+      } else {
+        m.reply('failed....');
+      }
+    })
+    .catch(error => {
+      m.reply('Error: ' + error.message);
+    });
+  break;
+}
+//========================================================\\
+case "apk":
+      case "apkdl":
+        {
+          if (!text) return m.reply("*Which apk do you want to download?*");
+        let kyuu = await fetchJson (`https://bk9.fun/search/apk?q=${text}`);
+        let tylor = await fetchJson (`https://bk9.fun/download/apk?id=${kyuu.BK9[0].id}`);
+         await Bellah.sendMessage(
+              m.chat,
+              {
+                document: { url: tylor.BK9.dllink },
+                fileName: tylor.BK9.name,
+                mimetype: "application/vnd.android.package-archive",
+                contextInfo: {
+        externalAdReply: {
+          title: botname,
+          body: `${tylor.BK9.name}`,
+          thumbnailUrl: `${tylor.BK9.icon}`,
+          sourceUrl: `${tylor.BK9.dllink}`,
+          mediaType: 2,
+          showAdAttribution: true,
+          renderLargerThumbnail: false
+        }
+      }
+    }, { quoted: loli });
+          }
+      break;
+//========================================================\\
+case 'onlygroup':
+            case 'onlygc':
+                if (!Owner) return m.reply(mess.owner)
+                if (args.length < 1) return reply(`Example ${prefix + command} on/off`)
+                if (q == 'on') {
+                    db.data.settings[botNumber].onlygrub = true
+                    m.reply(`Successfully Changed Onlygroup To ${q}`)
+                } else if (q == 'off') {
+                    db.data.settings[botNumber].onlygrub = false
+                    m.reply(`Successfully Changed Onlygroup To ${q}`)
+                }
+            break
+//========================================================\\
+case 'onlyprivatechat':
+            case 'onlypc':
+                if (!Owner) return m.reply(mess.owner)
+                if (args.length < 1) return m.reply(`Example ${prefix + command} on/off`)
+                if (q == 'on') {
+                    db.data.settings[botNumber].onlypc = true
+                    m.reply(`Successfully Changed Only-Pc To ${q}`)
+                } else if (q == 'off') {
+                    db.data.settings[botNumber].onlypc = false
+                    m.reply(`Successfully Changed Only-Pc To ${q}`)
+                }
+            break
+//========================================================\\
+case "setppgc": {
+if (!isGroup) return m.reply(mess.group)
+if (!isBotAdmins) return m.reply(mess.adminbot)
+if (!isBotAdmins) return m.reply(mess.admin)
+if (/image/g.test(mime)) {
+let media = await Bellah.downloadAndSaveMediaMessage(qmsg)
+await Bellah.updateProfilePicture(m.chat, {url: media})
+await fs.unlinkSync(media)
+m.reply("Group profile photo changed successfully by VolTah Xmd")
+} else return m.reply('tag/reply foto')}
+break
+//========================================================\\
+case "setppbot": case "setpp": {
+if (!Owner) return m.reply(mess.owner)
+if (/image/g.test(mime)) {
+let media = await Bellah.downloadAndSaveMediaMessage(qmsg)
+await Bellah.updateProfilePicture(botNumber, {url: media})
+await fs.unlinkSync(media)
+m.reply("Profile photo changed by Bellah Xmd")
+} else return m.reply('tag/reply foto')}
+break
+//========================================================\\
+case "listgc": case "cekid": case "listgrup": {
+let gcall = Object.values(await Bellah.groupFetchAllParticipating().catch(_=> null))
+let listgc = `*𝐋𝐈𝐒𝐓 𝐀𝐋𝐋 𝐂𝐇𝐀𝐓 𝐆𝐑𝐎𝐔𝐏*\n\n`
+await gcall.forEach((u, i) => {
+listgc += `Title : ${u.subject}\nID : ${u.id}\nMember : ${u.participants.length}\nStatus : ${u.announce == true ? "Tertutup" : "Terbuka"}\nCreator : ${u.owner ? u.owner.split('@')[0] : 'Active'}\n\n`
+})
+m.reply(listgc)
+}
+break
+//========================================================\\
+case 'poll': {
+	if (!Owner) return m.reply(mess.owner)
+            let [poll, opt] = text.split("|")
+            if (text.split("|") < 2)
+                return await reply(
+                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?|Xeon,Cheems,Doge...`
+                )
+            let options = []
+            for (let i of opt.split(',')) {
+                options.push(i)
+            }
+            await Bellah.sendMessage(m.chat, {
+                poll: {
+                    name: poll,
+                    values: options
+                }
+            })
+        }
+        break
+//========================================================\\
+case 'antilink': {
+               if (!m.isGroup) return m.reply(mess.group)
+if (!isBotAdmins) return m.reply(mess.admin)
+if (!isAdmins && !Owner) return m.reply(mess.admin)
+               if (args.length < 1) return m.reply('on/off?')
+               if (args[0] === 'on') {
+                  db.data.chats[from].antilink = true
+                  reply(`${command} is enabled`)
+               } else if (args[0] === 'off') {
+                  db.data.chats[from].antilink = false
+                  m.reply(`${command} is disabled`)
+               }
+            }
+            break
+//========================================================\\
+case 'antilinkgc': {
+               if (!m.isGroup) return m.reply(mess.group)
+if (!isBotAdmins) return m.reply(mess.admin)
+if (!isAdmins && !Owner) return XeonStickAdmin()
+               if (args.length < 1) return m.reply('on/off?')
+               if (args[0] === 'on') {
+                  db.data.chats[from].antilinkgc = true
+                  reply(`${command} is enabled`)
+               } else if (args[0] === 'off') {
+                  db.data.chats[from].antilinkgc = false
+                  m.reply(`${command} is disabled`)
+               }
+            }
+            break
+//========================================================\\
+case 'close':
+                if (!m.isGroup) return m.reply(mess.group)
+                if (!isAdmins && !Owner) return reply(mess.admin)
+                if (!isBotAdmins) return m.reply(mess.admin)
+                if (args[1] == 'second') {
+                    var timer = args[0] * `1000`
+                } else if (args[1] == 'minute') {
+                    var timer = args[0] * `60000`
+                } else if (args[1] == 'hour') {
+                    var timer = args[0] * `3600000`
+                } else if (args[1] == 'day') {
+                    var timer = args[0] * `86400000`
+                } else {
+                    return m.reply('*select:*\nsecond\nminute\nhour\n\n*Example*\n10 second')
+                }
+                m.reply(`Close time ${q} starting from now`)
+                setTimeout(() => {
+                    var nomor = m.participant
+                    const close = `*Close time* group closed by admin\nnow only admin can send messages`
+                    Bellah.groupSettingUpdate(m.chat, 'announcement')
+                    
+                  m.reply(close)
+                }, timer)
+                break
+//========================================================\\
+case 'open':
+                if (!m.isGroup) return m.reply(mess.group)
+                if (!isAdmins && !Owner) return reply(mess.admin)
+                if (!isBotAdmins) return m.reply(mess.admin)
+                if (args[1] == 'second') {
+                    var timer = args[0] * `1000`
+                } else if (args[1] == 'minute') {
+                    var timer = args[0] * `60000`
+                } else if (args[1] == 'hour') {
+                    var timer = args[0] * `3600000`
+                } else if (args[1] == 'day') {
+                    var timer = args[0] * `86400000`
+                } else {
+                    return m.reply('*select:*\nsecond\nminute\nhour\n\n*example*\n10 second')
+                }
+                m.reply(`Open time ${q} starting from now`)
+                setTimeout(() => {
+                    var nomor = m.participant
+                    const open = `*Open time* the group was opened by admin\n now members can send messages`
+                    Bellah.groupSettingUpdate(m.chat, 'not_announcement')
+                    m.reply(open)
+                }, timer)
+                break
+//========================================================\\
+case 'add':
+                if (!m.isGroup) return m.reply(mess.group)
+                if(!Owner) return m.reply(mess.owner)
+                if (!isBotAdmins) return reply(mess.admin)
+                let blockwwww = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+                await Bellah.groupParticipantsUpdate(m.chat, [blockwwww], 'add')
+                m.reply(mess.done)
+                break
+//========================================================\\
+case 'creategc': case 'creategroup': {
+if (!Owner) return m.reply(mess.owner)
+if (!args.join(" ")) return reply(`Use ${prefix+command} groupname`)
+try {
+let cret = await Bellah.groupCreate(args.join(" "), [])
+let response = await Bellah.groupInviteCode(cret.id)
+const teksop = `     「 Create Group 」
+
+▸ Name : ${cret.subject}
+▸ Owner : @${cret.owner.split("@")[0]}
+▸ Creation : ${moment(cret.creation * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}
+
+https://chat.whatsapp.com/${response}`
+Bellah.sendMessage(m.chat, { text:teksop, mentions: await Bellah.parseMention(teksop)}, {quoted:m})
+} catch {
+	m.reply(`Error`)
+	}
+}
+break
 //========================================================\\
 case 'translate':{
   	if (!q) return m.reply(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
