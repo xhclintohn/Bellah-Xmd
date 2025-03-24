@@ -1083,7 +1083,7 @@ let Menu = `
         caption: Menu,
         gifPlayback: false
     }, { quoted: loli });
-
+await  Bellah.sendMessage(m.chat, { audio: {url: "https://files.catbox.moe/idskdm.mp3"}, mimetype: 'audio/mp4', ptt:true}, { quoted: loli });
 }
 break   
         
