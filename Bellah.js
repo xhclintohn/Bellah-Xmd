@@ -1145,6 +1145,30 @@ await  Bellah.sendMessage(m.chat, { audio: {url: "https://files.catbox.moe/idskd
 }
 break
 //========================================================\\
+case 'typing':
+                if (!Owner) return m.reply(mess.owner)
+                if (args.length < 1) return reply(`Example ${prefix + command} on/off`)
+                if (q === 'on') {
+                    db.data.settings[botNumber].autotype = true
+                    m.reply(`Successfully changed Auto-Typing to ${q}`)
+                } else if (q === 'off') {
+                    db.data.settings[botNumber].autotype = false
+                    m.reply(`Successfully changed Auto-Typing to ${q}`)
+                }
+            break
+//========================================================\\
+case 'recording':
+                if (!Owner) return m.reply(mess.owner)
+                if (args.length < 1) return reply(`Example ${prefix + command} on/off`)
+                if (q === 'on') {
+                    db.data.settings[botNumber].autorecord = true
+                    m.reply(`Successfully changed Auto-Recording to ${q}`)
+                } else if (q === 'off') {
+                    db.data.settings[botNumber].autorecord = false
+                    m.reply(`Successfully changed Auto-Recording to ${q}`)
+                }
+            break
+//========================================================\\
 case 'play2': {
     if (args.length === 0) return Bellah.sendMessage(m.chat, { text: `which song from YouTube do you want to download?, example:\nplay dj kane` }, { quoted: m });
 
