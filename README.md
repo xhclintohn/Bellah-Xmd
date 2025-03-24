@@ -12,6 +12,13 @@
 <a href="https://github.com/Tennor-modz/Bellah-XMD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 </p>
 
+`Polite Notice`
+
+* *`This Repo is not Obfuscated, And therefore any mistakes or errors persists due to recoding        owner will not be in Touch with it`*
+
+
+
+
   ## VolTah Xmd Set up✅
   1.  > ***`Star ⭐` repository & Click [`FORK`](https://github.com/Tennor-modz/bellah-XMD/fork)***
       
