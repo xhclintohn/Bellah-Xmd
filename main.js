@@ -209,14 +209,14 @@ try{
 image: {
 url: 'https://files.catbox.moe/t3gs2m.jpg'
 }, 
-caption: `Bellah Xmd V2 connected
+caption: ` VolTah Xmd (Bellah Xmd V2) connected
 > Bot prefix: ${global.xprefix}
 
 > Owner: ${global.ownernumber}
 
 > BotName: ${global.botname}
 
-> Total Command: 28
+> Total Command: 35
 
 > Mode:  ${Bellah.public ? '𝗣𝘂𝗯𝗹𝗶𝗰 ϟ' : '𝗣𝗿𝗶𝘃𝗮𝘁𝗲 ϟ'}
 
