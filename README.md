@@ -47,7 +47,7 @@ A.* Render [`Tutorial`](https://youtu.be/bj59ynAaa3Y?si=cJpQPr1XaP7q-tDF)
 
 
 
-B.* Scalingo
+B.* Scalingo [`Panel deployment`] | [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm).
 
 
 
@@ -57,7 +57,7 @@ B.* Scalingo
 
 
 
-C.* Panel deployment 
+C.* Panel deployment [`Panel deployment`] | [`Tutorial`](https://youtu.be/ajaddRsPvsw?si=-UKgE092fNXRb_mm)
 
 
 
