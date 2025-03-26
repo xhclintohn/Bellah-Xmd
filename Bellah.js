@@ -243,9 +243,9 @@ module.exports = Bellah = async (Bellah, m, chatUpdate, store) => {
                 //theme sticker reply
         
         //premium
-        async function replyprem(teks) {
-    reply(`This feature is for premium user, contact the owner to become premium user`)
-}
+
+			            
+            
           //script replier
         async function sendBellahMessage(chatId, message, options = {}){
     let generate = await generateWAMessage(chatId, message, options)
@@ -413,7 +413,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                   antidocument: false,
                   anticontact: false,
                   antilink: false,
-                  antilinkgc: true
+                  antilinkgc: false
                }
             let setting = global.db.data.settings[botNumber]
             if (typeof setting !== 'object') global.db.data.settings[botNumber] = {}
@@ -1016,7 +1016,7 @@ let Menu = `
 │ ─≽ *Name* : ${pushname}
 │ ─≽ *Version* :*𝟐.𝟎.𝟎*
 │ ─≽ *Runtime* : ${runtime(process.uptime())}
-│ ─≽ *Totalfeature* : 69
+│ ─≽ *Totalfeature* : 86
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1033,6 +1033,7 @@ let Menu = `
 │ ─≽ *repo*
 │ ─≽ *autostatusview*
 │ ─≽ *uptime*
+│ ─≽ *delete*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1044,11 +1045,14 @@ let Menu = `
 │ ─≽ *anime*
 │ ─≽ *detiknews*
 │ ─≽ *apk*
+│ ─≽ *igdl*
+│ ─≽ *lyrics*
 │ ─≽ *spotifydown*
 │ ─≽ *spotifysearch*
 │ ─≽ *igstalk*
 │ ─≽ *tiktokstalk*
 │ ─≽ *ytmp4*
+│ ─≽ *ytmp3*
 │ ─≽ *mediafire*
 │ ─≽ *play2*
 │──────♢
@@ -1071,7 +1075,9 @@ let Menu = `
 │ ─≽ *setppgc*
 │ ─≽ *listonline*
 │ ─≽ *resetlink*
+│ ─≽ *pin*
 │ ─≽ *setnamegc*
+│ ─≽ *request-join*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1080,6 +1086,7 @@ let Menu = `
 │ ─≽ *take*
 │ ─≽ *brat*
 │ ─≽ *emojimix*
+│ ─≽ *notes*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1096,6 +1103,7 @@ let Menu = `
 │ ─≽ *setpp*
 │ ─≽ *onlypc*
 │ ─≽ *onlygc*
+│ ─≽ *reactch*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1108,7 +1116,13 @@ let Menu = `
 │ ─≽ *country*
 │ ─≽ *quiz*
 │ ─≽ *yts*
-│ ─≽ *trackip*
+│ ─≽ *pinterest*
+│ ─≽ *igstory*
+│ ─≽ *ytstalk*
+│ ─≽ *ffstalk*
+│ ─≽ *meme*
+│ ─≽ *cekkodam*
+│ ─≽ *sfile*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1119,6 +1133,8 @@ let Menu = `
 │ ─≽ *tovn*
 │ ─≽ *translate*
 │ ─≽ *tourl*
+│ ─≽ *logo*
+│ ─≽ *tts*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
 
@@ -1133,6 +1149,11 @@ let Menu = `
 │ ─≽ *gitclone*
 │──────♢
 ┗━━━━━━━━━━━━━━━♢
+
+┏━━「 \`Others\` 」
+│ ─≽ *cc*
+│──────♢
+┗━━━━━━━━━━━━━━━♢
 ` 
     Bellah.sendMessage(m.chat, {
         image: {
@@ -1144,6 +1165,501 @@ let Menu = `
 await  Bellah.sendMessage(m.chat, { audio: {url: "https://files.catbox.moe/idskdm.mp3"}, mimetype: 'audio/mp4', ptt:true}, { quoted: loli });
 }
 break
+           //========================================================\\        
+case "igdl": {
+  try {
+    if(!text) return m.reply(`provide an insta url`);
+    m.reply(`wait....`);
+    let anu = `https://www.ikyiizyy.my.id/api/download/igdl?url=${encodeURIComponent(text)}`;
+    const res = await fetch(anu);
+    const response = await res.json();
+    
+    Bellah.sendMessage(m.chat, {
+      video: { url: response.result.url },
+      mimetype: "video/mp4",
+      caption: mess.done
+    }, { quoted: m })
+  } catch (err) {
+    console.log(err);
+    return m.reply(err);
+  }
+}
+break;    
+   //========================================================\\                
+case "cc": case "cvcc": {
+    try {
+        let [type, jumlah] = args;
+        let validTypes = ["MasterCard", "Visa", "Amex", "Discover"];
+        if (!type || !validTypes.includes(type)) {
+            return m.reply(`⚠️ Format ! Provide type: MasterCard, Visa, Amex, Discover.\n\n🔰 *Use:*\nKetik: *vcc <type> <jumlah>*\nExample: *cc Visa 3*`);
+        }
+        jumlah = jumlah && !isNaN(jumlah) ? parseInt(jumlah) : 5;
+        if (jumlah < 1 || jumlah > 10) return m.reply("⚠️ Jumlah VCC minimal 1 dan maksimal 10!");
+        const response = await fetch(`https://api.siputzx.my.id/api/tools/vcc-generator?type=${type}&count=${jumlah}`);
+        const data = await response.json();
+        if (!data.status || !data.data) return m.reply("⚠️ error.");
+        let message = `💳 *Virtual Credit Card (VCC) - ${type}*\n\n`;
+        data.data.forEach((card, index) => {
+            message += ` *Card ${index + 1}*\n` +
+                `• 🏷️ Name: ${card.cardholderName}\n` +
+                `• 💳 Number: ${card.cardNumber}\n` +
+                `• 📆 Exp: ${card.expirationDate}\n` +
+                `• 🔐 CVV: ${card.cvv}\n\n`;
+        });
+        m.reply(message);
+    } catch (err) {
+        console.error(err);
+        m.reply("⚠️ failed to create  VCC.");
+    }
+}
+    break  
+              //========================================================\\    
+   case "tts": {
+  if(!text) return m.reply("`provide a query`");
+  m.reply(`processing your query`);
+  try {
+    let anu = `https://api.siputzx.my.id/api/tools/tts?text=${encodeURIComponent(text)}&voice=jv-ID-DimasNeural&rate=0%&pitch=0Hz&volume=0%`;
+    const response = await axios.get(anu, {
+      responseType: 'arraybuffer'
+    });
+    let buffer = response.data;
+    
+    Bellah.sendMessage(m.chat, {
+      audio: buffer,
+      mimetype: "audio/mpeg",
+      ptt: true
+    })
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
+}
+break;
+                //========================================================\\        
+case "notes": case "tulis": {
+  if (!text) return m.reply('❌provide a text .\n\nExample: nulis Biyu Tamvan');
+  
+  m.reply(`process.....`);
+  const axios = require('axios');
+  let apiUrl = `https://nirkyy.koyeb.app/api/v1/nulis?text=${encodeURIComponent(text)}`;
+
+  try {
+    const response = await axios.get(apiUrl, { responseType: 'arraybuffer' });
+    Bellah.sendMessage(m.chat, {
+      image: Buffer.from(response.data),
+      caption: `📝 *Success* 📝\n\n📌 *Text:* ${text}`
+    }, { quoted: m });
+  } catch (error) {
+    console.log(error);
+    m.reply(`❌ Error\nLogs error : ${error.message}`);
+  }
+}
+break
+                
+//========================================================\\  
+
+case "cekkhodam": case "cekkodam": {
+  if (!text) return m.reply('❌ provide a name or title.');
+  m.reply(`processing....`);
+  const axios = require('axios');
+  let apiUrl = `https://nirkyy.koyeb.app/api/v1/khodam?nama=${encodeURIComponent(text)}`;
+  try {
+    const response = await axios.get(apiUrl, { responseType: 'arraybuffer' });
+    Bellah.sendMessage(m.chat, {
+      image: Buffer.from(response.data),
+      caption: `🔮 *Check Hodam details* 🔮\n\n📌 *Name:* ${text}`
+    }, { quoted: m });
+  } catch (error) {
+    console.log(error);
+    m.reply(`❌ Error\nLogs error : ${error.message}`);
+  }
+}
+break
+            //========================================================\\        
+case "reactionch": case "reactch": {
+ if (!Owner) return m.reply(mess.owner)
+ if (!text || !args[0] || !args[1]) 
+ return m.reply("Contoh penggunaan:\n.reactch https://whatsapp.com/channel/0029VakRR89L7UVPwf53TB0v/4054 😂")
+ if (!args[0].includes("https://whatsapp.com/channel/")) 
+ return m.reply("provide a valid link")
+ let result = args[0].split('/')[4]
+ let serverId = args[0].split('/')[5]
+ let res = await Bellah.newsletterMetadata("invite", result) 
+ await Bellah.newsletterReactMessage(res.id, serverId, args[1])
+ m.reply(`Failed to make reactions  ${args[1]} in channel ${res.name}`)
+}
+break
+                //========================================================\\       
+                case "sfile": {
+  if (!text) return m.reply(`Example: ${prefix + command} query`);
+  try {
+    let api = await fetch(`https://api-rest-rizzkyxofc.vercel.app/api/search/sfile?q=${text}`);
+    let data = await api.json();
+    if (!data.status) return m.reply('Search failed! Try again later.');
+    if (data.result.length === 0) return m.reply('No files found!');
+    
+    let teks = `乂 *SFILE SEARCH* ◦\n\n`;
+    data.result.slice(0, 25).forEach((file, index) => {
+      teks += `乂 *${index + 1}.* ${file.filename}\n`;
+      teks += `乂 *Url* : ${file.url}\n\n`;
+    });
+    
+    await Bellah.sendMessage(m.chat, { text: teks }, { quoted: m });
+  } catch (e) {
+    console.log(e);
+    m.reply('Error occurred while searching!');
+  }
+}
+break
+//========================================================\\                     
+
+case "meme":
+case "searchmeme":
+case "soundmeme": {
+ if (!q) return m.reply("provide a memme title!\nExample: meme wibu 2");
+ let args = q.split(" ");
+ let limit = parseInt(args[args.length - 1]); 
+ let searchQuery = isNaN(limit) ? q : args.slice(0, -1).join(" "); 
+ let url = `https://api.agungny.my.id/api/memesound?q=${encodeURIComponent(searchQuery)}`;
+ try {
+ let res = await fetch(url);
+ let json = await res.json();
+ if (!json.status || !json.result.length) return reply("Meme tidak ditemukan!");
+ let results = isNaN(limit) ? json.result : json.result.slice(0, limit);
+ let message = "🎵 *Your Title:*\n\n";
+ for (let i = 0; i < results.length; i++) {
+ message += `🎶 *${results[i].text}*\n🔗 (${results[i].url})\n\n`;
+ await Bellah.sendMessage(from, { audio: { url: results[i].audioUrl }, mimetype: "audio/mpeg" });
+ }
+ m.reply(message);
+ } catch (err) {
+ console.error(err);
+ m.reply("error. [ failed to process meme ]");
+ }
+}
+break
+  //========================================================\\              
+case "ff":
+case "ffstalk":{
+ try {
+ if (args.length === 0) return m.reply(`Example: ${prefix + command} 537212033`);
+ 
+ const id = args[0];
+ const apiUrl = `https://vapis.my.id/api/ff-stalk?id=${id}`;
+ 
+ const response = await fetch(apiUrl);
+ const json = await response.json();
+ 
+ if (!json.status) return m.reply('Failed to fetch data. User ID might be invalid.');
+ 
+ const data = json.data;
+ const account = data.account;
+ const pet = data.pet_info;
+ const guild = data.guild;
+ const items = data.equippedItems;
+ 
+ let text = `*👤 FREE FIRE USER INFO*\n\n`;
+ text += `*🆔 User ID*: ${account.id}\n`;
+ text += `*👤 Username*: ${account.name}\n`;
+ text += `*🔰 Level*: ${account.level}\n`;
+ text += `*⭐ XP*: ${account.xp}\n`;
+ text += `*🌍 Region*: ${account.region}\n`;
+ text += `*👍 Likes*: ${account.like}\n`;
+ text += `*📝 Bio*: ${account.bio}\n`;
+ text += `*🎂 Created*: ${account.create_time}\n`;
+ text += `*⏱️ Last Login*: ${account.last_login}\n`;
+ text += `*🎖️ Honor Score*: ${account.honor_score}\n`;
+ text += `*🎯 BR Points*: ${account.BR_points}\n`;
+ text += `*🔫 CS Points*: ${account.CS_points}\n`;
+ text += `*🎫 Booyah Pass*: ${account.booyah_pass ? 'Yes' : 'No'}\n`;
+ text += `*🏆 Booyah Pass Badge*: ${account.booyah_pass_badge}\n\n`;
+ 
+ if (pet) {
+ text += `*🐱 PET INFO*\n`;
+ text += `*🐾 Name*: ${pet.name}\n`;
+ text += `*🔰 Level*: ${pet.level}\n`;
+ text += `*⭐ XP*: ${pet.xp}\n\n`;
+ }
+ 
+ if (guild) {
+ text += `*👥 GUILD INFO*\n`;
+ text += `*🛡️ Name*: ${guild.name}\n`;
+ text += `*🆔 ID*: ${guild.id}\n`;
+ text += `*🔰 Level*: ${guild.level}\n`;
+ text += `*👥 Members*: ${guild.member}/${guild.capacity}\n\n`;
+ }
+ 
+
+ text += `*🎮 EQUIPPED ITEMS*\n`;
+ 
+ if (items.Outfit && items.Outfit.length > 0) {
+ text += `\n*👕 Outfit*:\n`;
+ items.Outfit.forEach(item => {
+ text += `- ${item.name}\n`;
+ });
+ }
+ 
+ if (items.Pet && items.Pet.length > 0) {
+ text += `\n*🐾 Pet*:\n`;
+ items.Pet.forEach(item => {
+ text += `- ${item.name}\n`;
+ });
+ }
+ 
+ if (items.Avatar && items.Avatar.length > 0) {
+ text += `\n*🎭 Avatar*:\n`;
+ items.Avatar.forEach(item => {
+ text += `- ${item.name}\n`;
+ });
+ }
+ 
+ if (items.Banner && items.Banner.length > 0) {
+ text += `\n*🏳️ Banner*:\n`;
+ items.Banner.forEach(item => {
+ text += `- ${item.name}\n`;
+ });
+ }
+ 
+ if (items.Weapons && items.Weapons.length > 0) {
+ text += `\n*🔫 Weapons*:\n`;
+ items.Weapons.forEach(item => {
+ text += `- ${item.name}\n`;
+ });
+ }
+ 
+ if (items.Title && items.Title.length > 0) {
+ text += `\n*📜 Title*:\n`;
+ items.Title.forEach(item => {
+ text += `- ${item.name}\n`;
+ });
+ }
+ 
+ await m.reply(text);
+ } catch (error) {
+ console.error(error);
+ await m.reply('An error occurred while fetching the data');
+ }
+}
+ break    
+  //========================================================\\              
+
+case 'lyrics': 
+ if (!q) return m.reply('Provide a title!\nExample: .lyrics someone like you');
+ m.reply('processing your lyrics...');
+ try {
+ const response = await fetch(`https://r.jina.ai/https://www.google.com/search?q=lirik+lagu+${encodeURIComponent(q)}&hl=en`, {
+ headers: {
+ 'x-return-format': 'html',
+ 'x-engine': 'cf-browser-rendering',
+ }
+ });
+ const cheerio = require('cheerio');
+ const text = await response.text();
+ const $ = cheerio.load(text);
+ const lirik = [];
+ const output = [];
+ const result = {};
+ $('div.PZPZlf').each((i, e) => {
+ const penemu = $(e).find('div[jsname="U8S5sf"]').text().trim();
+ if (!penemu) output.push($(e).text().trim());
+ });
+ $('div[jsname="U8S5sf"]').each((i, el) => {
+ let out = '';
+ $(el).find('span[jsname="YS01Ge"]').each((j, span) => {
+ out += $(span).text() + '\n';
+ });
+ lirik.push(out.trim());
+ });
+ result.lyrics = lirik.join('\n\n');
+ result.title = output.shift();
+ result.subtitle = output.shift();
+ result.platform = output.filter(_ => !_.includes(':'));
+ output.forEach(_ => {
+ if (_.includes(':')) {
+ const [name, value] = _.split(':');
+ result[name.toLowerCase()] = value.trim();
+ }
+ });
+ if (!result.lyrics) return m.reply('failed to get your lyrics title.');
+ let teks = `🎵 *${result.title || 'Title found'}* 🎵\n`;
+ teks += result.subtitle ? `_${result.subtitle}_\n\n` : '\n';
+ teks += result.lyrics;
+ m.reply(teks);
+ } catch (error) {
+ console.error(error);
+ m.reply('failed to process your lyrics.');
+ }
+ break
+//========================================================\\                    
+
+case "ytstalk": case "infoyt": case "youtubestalk": {
+ if (!text) return m.reply(example("ytstalk channel name"))
+ try {
+ const apiUrl = `https://fastrestapis.fasturl.cloud/stalk/youtube/simple?username=${encodeURIComponent(text)}`
+ const response = await fetch(apiUrl)
+ const data = await response.json()
+ if (data.status !== 200) {
+ return m.reply(`Error: ${data.content || "Failed to fetch data"}`)
+ }
+ const result = data.result
+ const additionalInfo = result.additionalInfo
+ let caption = `*🔍 YOUTUBE CHANNEL INFO*\n\n`
+ caption += `*Channel:* ${result.channel}\n`
+ caption += `*Description:* ${result.description || "No description"}\n`
+ caption += `*URL:* ${result.url}\n\n`
+ caption += `*📊 STATS*\n`
+ caption += `*Subscribers:* ${additionalInfo.totalSubs || "0"}\n`
+ caption += `*Total Videos:* ${additionalInfo.totalVideos || "0"}\n`
+ caption += `*Total Views:* ${additionalInfo.views || "0"}\n`
+ caption += `*Joined:* ${additionalInfo.join || "Unknown"}\n`
+ if (result.socialMediaLinks && result.socialMediaLinks.length > 0) {
+ caption += `\n*🔗 SOCIAL MEDIA*\n`
+ result.socialMediaLinks.forEach((link, index) => {
+ caption += `${index + 1}. ${link.url}\n`
+ })
+ }
+ if (result.latestVideos && result.latestVideos.length > 0) {
+ caption += `\n*📺 LATEST VIDEOS*\n`
+ for (let i = 0; i < Math.min(3, result.latestVideos.length); i++) {
+ const video = result.latestVideos[i]
+ caption += `${i + 1}. *${video.title}*\n`
+ caption += ` Views: ${video.views}\n`
+ caption += ` URL: ${video.videoUrl}\n\n`
+ }
+ }
+ await Bellah.sendMessage(m.chat, {
+ image: { url: result.profile },
+ caption: caption
+ }, { quoted: loli})
+ } catch (error) {
+ console.log(error)
+ m.reply('Error occured while getting information')
+ }
+}
+break
+            //========================================================\\        
+      case 'igstory': case 'instagramstory': case 'instastory': case 'storyig': {
+				if (!text) return m.reply(`Example: ${prefix + command} username`)
+				try {
+					const hasil = await instaStory(text);
+					m.reply(mess.wait)
+					for (let i = 0; i < hasil.results.length; i++) {
+						await Bellah.sendFileUrl(m.chat, hasil.results[i].url, 'Done', m)
+					}
+				} catch (e) {
+					m.reply('Username is private on Instagram!');
+				}
+			}
+			break    //========================================================\\    
+     
+
+case 'logo': {
+  if (!text) {
+    return m.reply("Provide title, description, and slogan logo. Format: .logo Judul|Ide|Slogan");
+  }
+
+  const [title, idea, slogan] = text.split("|");
+
+  if (!title || !idea || !slogan) {
+    return m.reply("Format invalid. Use : .logo Title|Description|Slogan\n\n*Example :* .logo Takashi|Singer|subscribe");
+  }
+
+  try {
+    const payload = {
+      ai_icon: [333276, 333279],
+      height: 300,
+      idea: idea,
+      industry_index: "N",
+      industry_index_id: "",
+      pagesize: 4,
+      session_id: "",
+      slogan: slogan,
+      title: title,
+      whiteEdge: 80,
+      width: 400
+    };
+
+    const { data } = await axios.post("https://www.sologo.ai/v1/api/logo/logo_generate", payload);
+    
+    if (!data.data.logoList || data.data.logoList.length === 0) {
+      return m.reply("Logo Data");
+    }
+
+    const logoUrls = data.data.logoList.map(logo => logo.logo_thumb);
+    
+    for (const url of logoUrls) {
+      await Bellah.sendMessage(m.chat, { image: { url: url } });
+    }
+  } catch (error) {
+    console.error("Error generating logo:", error);
+    await m.reply("Failed to Create Logo");
+  }
+};
+break    	
+                //========================================================\\   
+  case "ytmp3":
+  if (!q.includes("youtube.com") && !q.includes("youtu.be")) return m.reply("provide a you tube link!");
+  let [link, quality] = q.split(",");
+  let qualityOptions = ["64kbps", "128kbps", "192kbps", "256kbps", "320kbps"];
+  if (!quality) {
+    let qualityList = qualityOptions.map(q => `▫️ ${q}`).join("\n");
+    return m.reply(
+      `🔊 *provide query in correct format:*\n\n${qualityList}\n\n format: *ytmp3 linkyt,size*\nContoh: *ytmp3 ${link},320kbps*`
+    );
+  }
+  if (!qualityOptions.includes(quality)) return m.reply(
+    `⚠️ *provide a valid query:*\n\n${qualityOptions.map(q => `▫️ ${q}`).join("\n")}\n\nuse format: *ytmp3 linkyt,size*\nExample: *ytmp3 ${link},320kbps*`
+  );
+  let apiUrl = `https://fastrestapis.fasturl.cloud/downup/ytmp3?url=${encodeURIComponent(link)}&quality=${quality}&server=auto`;
+  m.reply("Processing audio download ...");
+  try {
+    let res = await fetch(apiUrl);
+    let data = await res.json();
+    if (data.status !== 200) return m.reply("failed to fetch audio!");
+    let { title, metadata, author, url, media } = data.result;
+    let caption = `🎵 *Title:* ${title}\n📌 *Duration:* ${metadata.duration}\n👤 *Channel:* ${author.name}\n📆 *Upload:* ${metadata.uploadDate}\n🎶 *Date:* ${quality}\n🔗 *Link:* ${url}`;
+    Bellah.sendMessage(m.chat, { 
+      audio: { url: media }, 
+      mimetype: "audio/mp4", 
+      fileName: `${title}.mp3`
+    }, { quoted: m });
+    m.reply(caption);
+  } catch (e) {
+    console.error(e);
+    m.reply("failed to get your audio!");
+  }
+  break   
+               
+            
+            //========================================================\\      
+                case 'delete': case 'del': case 'd': {
+				if (!m.quoted) return m.reply('Reply message you want to delete')
+				await Bellah.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: m.isBotAdmin ? false : true, id: m.quoted.id, participant: m.quoted.sender }})
+			}
+			break
+   //========================================================\\                    
+                case 'pin': case 'unpin': {
+				if (!m.isGroup) return m.reply(mess.group)
+				if (!isAdmins) return m.reply(mess.admin)
+				if (!isBotAdmins) return m.reply(`bot must be admin first`)
+				await Bellah.sendMessage(m.chat, { pin: { type: command == 'pin' ? 1 : 0, time: 2592000, key: m.quoted ? m.quoted.key : m.key }})
+			}
+			break
+      //========================================================\\          
+                case 'request-join': {
+				if (!m.isGroup) return m.reply(mess.group)
+				if (!isAdmins) return m.reply(mess.admin)
+				if (!isBotAdmins) return m.reply(mess.botAdmin)
+				const _list = await Bellah.groupRequestParticipantsList(m.chat).then(a => a.map(b => b.jid))
+				if (/a(p||pp||cc)(ept||rove)|true|ok/i.test(args[0])) {
+					await Bellah.groupRequestParticipantsUpdate(m.chat, _list, 'approve')
+				} else if (/reject|false|no/i.test(args[0])) {
+					await Bellah.groupRequestParticipantsUpdate(m.chat, _list, 'reject')
+				} else {
+					m.reply(`List Request Join :\n${_list.length > 0 ? '- @' + _list.join('\n- @').split('@')[0] : '*Nothing*'}\nExample : ${prefix + command} approve/reject`)
+				}
+			}
+			break
 //========================================================\\
 case 'typing':
                 if (!Owner) return m.reply(mess.owner)
@@ -1725,20 +2241,12 @@ case 'poll': {
         }
         break
 //========================================================\\
-case 'antilink': {
-               if (!m.isGroup) return m.reply(mess.group)
-if (!isBotAdmins) return m.reply(mess.admin)
-if (!isAdmins && !Owner) return m.reply(mess.admin)
-               if (args.length < 1) return m.reply('on/off?')
-               if (args[0] === 'on') {
-                  db.data.chats[from].antilink = true
-                  reply(`${command} is enabled`)
-               } else if (args[0] === 'off') {
-                  db.data.chats[from].antilink = false
-                  m.reply(`${command} is disabled`)
-               }
-            }
-            break
+case 'profile': case 'cek': {
+				const user = Object.keys(db.users)
+				const infoUser = db.users[m.sender]
+				await m.reply(`*👤Profile @${m.sender.split('@')[0]}* :\n🐋User Bot : ${user.includes(m.sender) ? 'True' : 'False'}\n🔥User : ${isVip ? 'VIP' : isPremium ? 'PREMIUM' : 'FREE'}\n🎫Limit : ${infoUser.limit}\n💰Uang : ${infoUser ? infoUser.uang.toLocaleString('id-ID') : '0'}`)
+			}
+			break
 //========================================================\\
 case 'antilinkgc': {
                if (!m.isGroup) return m.reply(mess.group)
