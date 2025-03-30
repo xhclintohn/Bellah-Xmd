@@ -2386,7 +2386,7 @@ break
 case 'anime': {
 if (!text) return m.reply(`Which anime are you lookin for?`)
 const malScraper = require('mal-scraper')
-await XeonStickWait()
+await m.reply("wait.....")
         const anime = await malScraper.getInfoFromName(text).catch(() => null)
         if (!anime) return m.reply(`Could not find`)
 let animetxt = `
