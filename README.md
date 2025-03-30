@@ -19,7 +19,7 @@
             <span class="badge-text">Stars</span>
             <span class="badge-count" id="stars-count">0</span>
         </a>
-        <a href="https://github.com/Tennor-modz/Bellah-Xmd/network/members" class="custom-badge" id="forks-badge">
+        <a href="https://github.com/Tennor-modz/Bellah-XMD/network/members" class="custom-badge" id="forks-badge">
             <span class="badge-icon">🍴</span>
             <span class="badge-text">Forks</span>
             <span class="badge-count" id="forks-count">0</span>
