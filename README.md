@@ -12,18 +12,6 @@
 <a href="https://github.com/Tennor-modz/Bellah-XMD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 </p>
 
-<div class="badge-container">
-    <p align="center">
-        <a href="https://github.com/Tennor-modz/Bellah-Xmd/stargazers/" class="custom-badge" id="stars-badge">
-            <span class="badge-icon">⭐</span>
-            <span class="badge-text">Stars</span>
-            <span class="badge-count" id="stars-count">0</span>
-        </a>
-        <a href="https://github.com/Tennor-modz/Bellah-XMD/network/members" class="custom-badge" id="forks-badge">
-            <span class="badge-icon">🍴</span>
-            <span class="badge-text">Forks</span>
-            <span class="badge-count" id="forks-count">0</span>
-        </a>
 
 
 `Polite Notice`
