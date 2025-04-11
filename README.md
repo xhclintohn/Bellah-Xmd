@@ -24,10 +24,11 @@
   ## VolTah Xmd Set up✅
   1.  > ***`Star ⭐` repository & Click [`FORK`](https://github.com/Tennor-modz/bellah-XMD/fork)***
       
-
+      
+2.   > - Click [GET CREDS FILE](https://replit.com/@DGXeon/Xeon-PairCode?v=1) and pair the code through the "WhatsApp Linked Devices" option in your WhatsApp app.
       
 
-  2.  > **Deployment Site(Heroku $ Panel)**
+  3.  > **Deployment Site(Heroku $ Panel)**
 
 <a href='https://vol-tah-web.vercel.app/' target="_blank">
   <img alt='VolTah Deploy' src='https://img.shields.io/badge/Deploy%20VolTah%20Xmd-orange?style=for-the-badge&logo=opencv&logoColor=black'/>
