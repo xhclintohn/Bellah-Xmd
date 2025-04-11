@@ -13,7 +13,7 @@
     "SESSION_ID": {
       "description": "Enter your session id",
       "value": "",
-      "required": true
+      "required": false
 },
   "BOT_NAME": {
       "description": "Enter bot name of your choice here",
