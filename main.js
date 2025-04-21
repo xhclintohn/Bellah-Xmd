@@ -76,28 +76,21 @@ const credsPath = path.join(sessionDir, 'creds.json');
 
 async function downloadSessionData() {
   try {
-    // Ensure session directory exists
+
     await fs.promises.mkdir(sessionDir, { recursive: true });
 
     if (!fs.existsSync(credsPath)) {
       if (!global.SESSION_ID) {
-      return console.log(color(`Session id not found at SESSION_ID!\nCreds.json not found at session folder!\n\nWait to enter your number`, 'red'));
+        return console.log(color(`Session id not found at SESSION_ID!\nCreds.json not found at session folder!\n\nWait to enter your number`, 'red'));
       }
 
-      const sessdata = global.SESSION_ID.split("Bellah~")[1];
-      const filer = File.fromURL(`https://mega.nz/file/${sessdata}`);
-
-      await new Promise((resolve, reject) => {
-        filer.download((err, data) => {
-          if (err) reject(err);
-          resolve(data);
-        });
-      })
-      .then(async (data) => {
-        await fs.promises.writeFile(credsPath, data);
-        console.log(color(`Session successfully saved, please wait!!`, 'green'));
-        await startBellah();
-      });
+      const base64Data = global.SESSION_ID.split("Bellah~")[1];
+      
+      const sessionData = Buffer.from(base64Data, 'base64');
+      
+        await fs.promises.writeFile(credsPath, sessionData);
+      console.log(color(`Session successfully saved, please wait!!`, 'green'));
+      await startBellah();
     }
   } catch (error) {
     console.error('Error downloading session data:', error);
@@ -112,7 +105,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
     const Bellah = makeWASocket({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: !pairingCode, // popping up QR in terminal log
-      
+      mobile: useMobile, // mobile api (prone to bans)
       browser: [ "Ubuntu", "Chrome", "20.0.04" ], // for this issues https://github.com/WhiskeySockets/Baileys/issues/328
      auth: {
          creds: state.creds,
@@ -216,7 +209,7 @@ caption: ` VolTah Xmd (Bellah Xmd V2) connected
 
 > BotName: ${global.botname}
 
-> Total Command: 105
+> Total Command: 69
 
 > Mode:  ${Bellah.public ? '𝗣𝘂𝗯𝗹𝗶𝗰 ϟ' : '𝗣𝗿𝗶𝘃𝗮𝘁𝗲 ϟ'}
 
@@ -254,7 +247,7 @@ CFonts.say('BELLAH XMD V2', {
             console.log(color(`${themeemoji} RECODE: ${wm}\n`,'magenta'))
             await delay(1000 * 2) 
             Bellah.groupAcceptInvite("JmsgzJllAAB8zHfQcJXxES")*/
-            console.log('> VolTah Xmd Is Running< [ ! ]')
+            console.log('> Bot is Connected< [ ! ]')
 		}
 	
 } catch (err) {
@@ -271,10 +264,25 @@ Bellah.ev.on("messages.upsert",  () => { })
 	            
 
 
-
+// Anti Call
+    Bellah.ev.on('call', async (XeonPapa) => {
+    	if (global.anticall){
+    console.log(XeonPapa)
+    for (let XeonFucks of XeonPapa) {
+    if (XeonFucks.isGroup == false) {
+    if (XeonFucks.status == "offer") {
+    let XeonBlokMsg = await Bellah.sendTextWithMentions(XeonFucks.from, `*${Bellah.user.name}* can't receive ${XeonFucks.isVideo ? `video` : `voice` } call. Sorry @${XeonFucks.from.split('@')[0]} you will be blocked. If called accidentally please contact the owner to be unblocked !`)
+    Bellah.sendContact(XeonFucks.from, owner, XeonBlokMsg)
+    await sleep(8000)
+    await Bellah.updateBlockStatus(XeonFucks.from, "block")
+    }
+    }
+    }
+    }
+    })
     //autostatus view
         Bellah.ev.on('messages.upsert', async chatUpdate => {
-        	if (global.autostatusview){
+        	if (global.antiswview){
             mek = chatUpdate.messages[0]
             if (mek.key && mek.key.remoteJid === 'status@broadcast') {
             	await Bellah.readMessages([mek.key]) }
