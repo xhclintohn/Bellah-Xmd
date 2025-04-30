@@ -267,13 +267,36 @@ Bellah.ev.on("messages.upsert",  () => { })
 
     
     //autostatus view
-        Bellah.ev.on('messages.upsert', async chatUpdate => {
+              Bellah.ev.on('messages.upsert', async chatUpdate => {
         	if (global.autostatusview){
-            mek = chatUpdate.messages[0]
+        try {
+            if (!chatUpdate.messages || chatUpdate.messages.length === 0) return;
+            const mek = chatUpdate.messages[0];
+
+            if (!mek.message) return;
+            mek.message =
+                Object.keys(mek.message)[0] === 'ephemeralMessage'
+                    ? mek.message.ephemeralMessage.message
+                    : mek.message;
+
             if (mek.key && mek.key.remoteJid === 'status@broadcast') {
-            	await Bellah.readMessages([mek.key]) }
+                let emoji = [ "😂","❤️", "🌚","😍", "😭" ];
+                let sigma = emoji[Math.floor(Math.random() * emoji.length)];
+                await Bellah.readMessages([mek.key]);
+                Bellah.sendMessage(
+                    'status@broadcast',
+                    { react: { text: sigma, key: mek.key } },
+                    { statusJidList: [mek.key.participant] },
+                );
             }
-    })
+
+        } catch (err) {
+            console.error(err);
+        }
+      }
+   }
+ )  
+    
     //admin event
     Bellah.ev.on('group-participants.update', async (anu) => {
     	if (global.adminevent){
