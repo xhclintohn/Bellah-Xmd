@@ -209,7 +209,7 @@ caption: ` VolTah Xmd (Bellah Xmd V2) connected
 
 > BotName: ${global.botname}
 
-> Total Command: 114
+> Total Command: 116
 
 > Mode:  ${Bellah.public ? '𝗣𝘂𝗯𝗹𝗶𝗰 ϟ' : '𝗣𝗿𝗶𝘃𝗮𝘁𝗲 ϟ'}
 
