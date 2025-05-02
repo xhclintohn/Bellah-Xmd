@@ -38,7 +38,7 @@
 
 3.   > **Bot File(Panel Deployment)**
 
-<a href='https://www.mediafire.com/file/un4955ui8qvxoz0/BELLAH_XMD_V2.zip/file' target="_blank">
+<a href='https://www.mediafire.com/file/bahk7r8ou0f37yw/BELLAH_XMD_V2.zip/file' target="_blank">
   <img alt='Pairing Code' src='https://img.shields.io/badge/Get%20Zip%20Here-darkpink?style=for-the-badge&logo=opencv&logoColor=black'/>
 </a>
 <br> 
