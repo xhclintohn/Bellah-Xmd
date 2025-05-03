@@ -33,6 +33,7 @@ global.hituet = 0
 global.autoblocknumber = process.env.AUTOBLOCK_NUMBER || '263,234' //set autoblock country code
 global.antiforeignnumber = process.env.ANTIFOREIGN_NUMBER || '' //set anti foreign number country code
 global.mode = process.env.MODE || 'public' //set bot public/private
+const antilinkgc = process.env.ANTILINK_GC || 'TRUE';
 global.anticall = process.env.ANTI_CALL || 'false' //bot blocks user when called
 global.autostatusview = process.env.AUTOSW_VIEW || 'true' //auto status/story view
 global.adminevent = true //show promote/demote message
