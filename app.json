@@ -58,7 +58,7 @@
   "BOT_PREFIX": {
       "description": "Enter bot prefix of your choice if else leave blank for multiprefixes",
       "value": ".",
-      "required": true
+      "required": false
     },
   "AUTO_TYPING": {
       "description": "type true/false or leave blank",
