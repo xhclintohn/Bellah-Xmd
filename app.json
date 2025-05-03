@@ -35,25 +35,20 @@
       "value": "",
       "required": true
     },
-  "WELCOME": {
-      "description": "Type true if you want your bot to send welcome or goodbye messages in groups or else type fals",
-      "value": "",
-      "required": false
+  "HEROKU_API": {
+      "description": "Put a Heroku api key here, will be required to update vars in your Dm",
+      "required": true
     },
-  "ANTI_CALL": {
-      "description": "Type true if you want bot to reject incoming calls or else type false",
-      "value": "",
-      "required": false
-    },
+  
   "MODE": {
       "description": "Type true if you want bot status mode to be public if else type false",
       "value": "true",
       "required": false
     },
-  "ANTIFOREIGN_NUMBER": {
-      "description": "Enter antiforeignnumbers with country codes if you don't want antiforeign numbers",
-      "value": "234,263",
-      "required": false 
+  "ANTILINK_GC": {
+      "description": "set true if you want bot to delete gc links or else set false",
+      "value": "true",
+      "required": false
     },
   "BOT_PREFIX": {
       "description": "Enter bot prefix of your choice if else leave blank for multiprefixes",
