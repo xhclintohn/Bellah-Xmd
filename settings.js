@@ -36,10 +36,10 @@ global.mode = process.env.MODE || 'public' //set bot public/private
 global.anticall = process.env.ANTI_CALL || 'false' //bot blocks user when called
 global.autostatusview = process.env.AUTOSW_VIEW || 'true' //auto status/story view
 global.adminevent = true //show promote/demote message
-global.groupevent = true //show update messages in group chat
+global.groupevent = process.env.GROUP_EVENT || 'true' //show update messages in group chat
 //msg
-global.autorecording = process.env.AUTO_RECORDING || 'false'
-global.autotyping = process.env.AUTO_TYPING || 'true'
+const appname = process.env.APP_NAME || '';
+const herokuapi = process.env.HEROKU_API;
 
 global.mess = {
 	limit: 'Your limit is up <\>',
