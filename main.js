@@ -240,13 +240,13 @@ CFonts.say('BELLAH XMD V2', {
 
      
 
-	        /*console.log(color(`\n${themeemoji} YT CHANNEL: YASSxOFC`,'magenta'))
-            console.log(color(`${themeemoji} GITHUB: Gk Punya `,'magenta'))
-            console.log(color(`${themeemoji} INSTAGRAM: @yassxofc `,'magenta'))
+	        console.log(color(`\n${themeemoji} YT CHANNEL:VolTah Xmd`,'magenta'))
+            console.log(color(`${themeemoji} GITHUB:Tennor-Modz `,'magenta'))
+            console.log(color(`${themeemoji} INSTAGRAM: @giddytennor `,'magenta'))
             console.log(color(`${themeemoji} WA NUMBER: ${owner}`,'magenta'))
             console.log(color(`${themeemoji} RECODE: ${wm}\n`,'magenta'))
             await delay(1000 * 2) 
-            Bellah.groupAcceptInvite("JmsgzJllAAB8zHfQcJXxES")*/
+            Bellah.groupAcceptInvite("https://chat.whatsapp.com/H7HjnZ2pVznAon1bEYvkfX")*/
             console.log('> Bot is Connected< [ ! ]')
 		}
 	
@@ -315,10 +315,10 @@ ppgroup = await Bellah.profilePictureUrl(anu.id, 'image')
 ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
  if (anu.action == 'promote') {
-const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+const xeontime = moment.tz('Africa/Nairobi').format('HH:mm:ss')
+const xeondate = moment.tz('Africa/Nairobi').format('DD/MM/YYYY')
 let xeonName = num
-xeonbody = ` 𝗖𝗼𝗻𝗴𝗿𝗮𝘁𝘀🎉 @${xeonName.split("@")[0]}, you have been *promoted* to *admin* 🥳`
+let xeonbody = ` 𝗖𝗼𝗻𝗴𝗿𝗮𝘁𝘀🎉 @${xeonName.split("@")[0]}, you have been *promoted* to *admin* 🥳`
    Bellah.sendMessage(anu.id,
  { text: xeonbody,
  contextInfo:{
@@ -329,13 +329,13 @@ xeonbody = ` 𝗖𝗼𝗻𝗴𝗿𝗮𝘁𝘀🎉 @${xeonName.split("@")[0]}, yo
 "body": `${ownername}`,
  "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": XeonWlcm,
+"thumbnail": ``,
 "sourceUrl": `${wagc}`}}})
 } else if (anu.action == 'demote') {
 const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 let xeonName = num
-xeonbody = `𝗢𝗼𝗽𝘀‼️ @${xeonName.split("@")[0]}, you have been *demoted* from *admin* 😬`
+let xeonbody = `𝗢𝗼𝗽𝘀‼️ @${xeonName.split("@")[0]}, you have been *demoted* from *admin* 😬`
 Bellah.sendMessage(anu.id,
  { text: xeonbody,
  contextInfo:{
@@ -346,7 +346,7 @@ Bellah.sendMessage(anu.id,
 "body": `${ownername}`,
  "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": XeonLft,
+"thumbnail": ``,
 "sourceUrl": `${wagc}`}}})
 }
 }
@@ -357,48 +357,7 @@ console.log(err)
 })
 
 // detect group update
-		Bellah.ev.on("groups.update", async (json) => {
-			if (global.groupevent) {
-			try {
-ppgroup = await Bellah.profilePictureUrl(anu.id, 'image')
-} catch (err) {
-ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
-}
-			console.log(json)
-			const res = json[0]
-			if (res.announce == true) {
-				await sleep(2000)
-				Bellah.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup has been closed by admin, Now only admins can send messages !`,
-				})
-			} else if (res.announce == false) {
-				await sleep(2000)
-				Bellah.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nThe group has been opened by admin, Now participants can send messages !`,
-				})
-			} else if (res.restrict == true) {
-				await sleep(2000)
-				Bellah.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup info has been restricted, Now only admin can edit group info !`,
-				})
-			} else if (res.restrict == false) {
-				await sleep(2000)
-				Bellah.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup info has been opened, Now participants can edit group info !`,
-				})
-			} else if(!res.desc == ''){
-				await sleep(2000)
-				Bellah.sendMessage(res.id, { 
-					text: `「 Group Settings Change 」\n\n*Group description has been changed to*\n\n${res.desc}`,
-				})
-      } else {
-				await sleep(2000)
-				Bellah.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\n*Group name has been changed to*\n\n*${res.subject}*`,
-				})
-			} 
-			}
-		})
+	
             
     Bellah.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
