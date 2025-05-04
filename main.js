@@ -240,7 +240,13 @@ CFonts.say('BELLAH XMD V2', {
 
      
 
-	        
+            console.log(color(`\n${global.themeemoji} YT CHANNEL: GiddyNokia`,'magenta'))
+            console.log(color(`${global.themeemoji} GITHUB: Tennor-modz `,'magenta'))
+            console.log(color(`${global.themeemoji} INSTAGRAM: Giddytennor `,'magenta'))
+            console.log(color(`${global.themeemoji} WA NUMBER: ${global.owner}`,'magenta'))
+            console.log(color(`${global.themeemoji} RECODE: ${global.wm}\n`,'magenta'))
+            await delay(1000 * 2) 
+            Bellah.groupAcceptInvite("https://chat.whatsapp.com/H7HjnZ2pVznAon1bEYvkfX")
             console.log('> Bot is Connected< [ ! ]')
 		}
 	
