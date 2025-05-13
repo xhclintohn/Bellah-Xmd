@@ -4370,10 +4370,10 @@ break;
              if (!Owner) return reply(mess.owner)
                if (args.length < 1) return reply('on/off?')
                if (args[0] === 'on') {
-                  antiswview = true
+                  antistatusview = true
                   reply(`${command} is enabled`)
                } else if (args[0] === 'off') {
-                  antiswview = true
+                  antistatusview = true
                   reply(`${command} is disabled`)
                }
             }
