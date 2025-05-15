@@ -1,5 +1,5 @@
 //base by DGXeon
-//recode by rapikz
+//recode by Giddy Tennor 
 
 const {
    spawn
