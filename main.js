@@ -262,7 +262,7 @@ Bellah.ev.on("messages.upsert",  () => { })
                     : mek.message;
 
             if (mek.key && mek.key.remoteJid === 'status@broadcast') {
-                let emoji = [ "😂","❤️", "🌚","😍", "😭" ];
+                let emoji = [ "🗿", "🐔", "😐", "👽", "🍅" ];
                 let sigma = emoji[Math.floor(Math.random() * emoji.length)];
                 await Bellah.readMessages([mek.key]);
                 Bellah.sendMessage(
