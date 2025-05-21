@@ -16,7 +16,7 @@ global.location = "Kenya" //ur location
 
 //new
 global.botname = process.env.BOT_NAME ||'𝐁𝐞𝐥𝐥𝐚𝐡 𝐗𝐦𝐝' //enter your  bot name here
-global.ownernumber = process.env.OWNER_NUMBER ||'254104245659' //ur owner number
+global.ownernumber = process.env.OWNER_NUMBER ||'254735342808' //ur owner number
 global.ownername = '© TENNOMODZ' //ur owner name
 global.websitex = "https://whatsapp.com/channel/0029VaPZWbY1iUxVVRIIOm0D" //"https://chat.whatsapp.com/JmsgzJllAAB8zHfQcJXxES"
 global.wagc = "https://chat.whatsapp.com/CzFlFQrkdzxFw0pxCBYM7H" //"https://chat.whatsapp.com/JmsgzJllAAB8zHfQcJXxES"
@@ -26,14 +26,14 @@ global.botscript = 'https://whatsapp.com/channel/0029VaPZWbY1iUxVVRIIOm0D' //'ht
 global.packname = process.env.PACK_NAME ||"VolTah Xmd" //enter your stickers author name here
 global.author = "Giddy-Tennor"
 global.creator = "254703726139@s.whatsapp.net"
-global.xprefix = process.env.BOT_PREFIX ||'.'
+global.xprefix = process.env.BOT_PREFIX ||','
 global.hituet = 0
 
 //bot settings 
 global.autoblocknumber = process.env.AUTOBLOCK_NUMBER || '263,234' //set autoblock country code
 global.antiforeignnumber = process.env.ANTIFOREIGN_NUMBER || '' //set anti foreign number country code
-global.mode = process.env.MODE || 'public' //set bot public/private
-const antilinkgc = process.env.ANTILINK_GC || 'TRUE';
+global.mode = process.env.MODE || 'private' //set bot public/private
+const antilinkgc = process.env.ANTILINK_GC || 'false';
 global.anticall = process.env.ANTI_CALL || 'false' //bot blocks user when called
 global.autostatusview = process.env.AUTOSW_VIEW || 'true' //auto status/story view
 global.adminevent = true //show promote/demote message
